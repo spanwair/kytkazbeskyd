@@ -1,13 +1,9 @@
 // @ts-check
 import { defineConfig } from "astro/config";
-
-import tailwind from "@astrojs/tailwind";
-
+import tailwindcss from "@tailwindcss/vite";
 import alpinejs from "@astrojs/alpinejs";
-
-import mdx from "@astrojs/mdx";
-
 import playformInline from "@playform/inline";
+import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
@@ -15,18 +11,17 @@ export default defineConfig({
 	base: "/",
 	// trailingSlash: 'always',
 	integrations: [
-		tailwind(),
 		alpinejs(),
-		mdx(),
-		(await import("@playform/inline")).default({
-			Critters: true,
+		playformInline({
+			Beasties: true,
 		}),
+		mdx(),
 	],
 	output: "static",
 	devToolbar: {
 		enabled: false,
 	},
-	experimental: {
-		svg: true,
+	vite: {
+		plugins: [tailwindcss()],
 	},
 });
