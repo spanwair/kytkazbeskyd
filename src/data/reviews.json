@@ -1,27 +1,32 @@
 [
-	{
-		"id": 1,
-		"author": "Jane Doe",
-		"review": "The food was amazing! I loved the atmosphere and the service was great."
-	},
-	{
-		"id": 2,
-		"author": "John Smith",
-		"review": "The best Italian food I've ever had. I can't wait to come back!"
-	},
-	{
-		"id": 3,
-		"author": "Alice Johnson",
-		"review": "The pasta was perfectly cooked and the sauce was delicious. I highly recommend this restaurant."
-	},
-	{
-		"id": 4,
-		"author": "Bob Brown",
-		"review": "The pizza was fantastic! I will definitely be ordering from here again."
-	},
-	{
-		"id": 5,
-		"author": "Sarah Wilson",
-		"review": "The tiramisu was to die for. I will be dreaming about it for weeks."
-	}
+  {
+    "id": 1,
+    "author": "Michaela Michelle",
+    "review": "Moc krásné Natálko."
+  },
+  {
+    "id": 2,
+    "author": "DrRen Šolty",
+    "review": "ty jsou krásne Naty."
+  },
+  {
+    "id": 3,
+    "author": "Mája Mája",
+    "review": "Ten je nádherný 😊"
+  },
+  {
+    "id": 4,
+    "author": "Ivet Cieslarova",
+    "review": "Super 😊"
+  },
+  {
+    "id": 5,
+    "author": "Fidorka Andělka",
+    "review": "Krásný... 😊"
+  },
+  {
+    "id": 6,
+    "author": "Pohodička pod Verpánem",
+    "review": "Nádhera 😊"
+  }
 ]

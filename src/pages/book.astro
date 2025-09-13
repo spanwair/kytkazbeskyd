@@ -3,14 +3,21 @@ import Layout from "~/layouts/Layout.astro";
 import Section from "~/components/Section.astro";
 import Heading from "~/components/Heading.astro";
 import FormBook from "~/components/forms/FormBook.astro";
+import { phone } from "~/data/config";
 ---
 
 <Layout>
 	<Section>
 		<Heading>
-			<h2 slot="heading-title" class="font-black text-brand-green h2">Book a table</h2>
+			<h2 slot="heading-title" class="font-black text-brand-green h2">Zavolejte mi</h2>
 			<p slot="heading-content" class="text-pretty">
-				Reserve a table for your next meal. We'll get back to you to confirm your booking.
+				<a href={`tel:${phone.label.replace(/\s/g, '')}`} class="inline-block text-brand-green hover:underline transition duration-200 font-medium">
+					{phone.label}
+				</a>
+			</p>
+			<h2 slot="heading-title-1" class="font-black text-brand-green h2">Napište mi</h2>
+			<p slot="heading-content-1" class="text-pretty">
+				Ozveme se vám co nejdříve to jen bude možné. Pro všechny dotazy a požadavky můžete využít i telefonní kontakt.
 			</p>
 		</Heading>
 

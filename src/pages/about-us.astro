@@ -9,26 +9,22 @@ import ButtonCallUs from "~/components/ButtonCallUs.astro";
 import Article from "~/components/Article.astro";
 
 // Images
-import PizzaHero from "~/assets/images/pizza-hero.png";
+import PizzaHero from "~/assets/images/images/about.jpg";
 ---
 
 <Layout>
 	<Section class:list={"bg-white"}>
 		<Hero>
 			<div slot="hero-content-left" class="prose max-w-none max-lg:order-1">
-				<Badge title="il ristorante italiana" />
-				<h1 class="font-black">Real Italian food in a real Italian restaurant...</h1>
+				<h1 class="font-black">Natália Ruszová</h1>
 
 				<p>
-					Experience the taste of Italy with our authentic dishes made from the finest ingredients. Indulge in
-					our wide variety of pizzas, pastas, and desserts, all crafted with love and tradition. Whether
-					you're dining in or taking out, we promise a memorable culinary experience.
+					Jsem z Hrádku - malebnè vesničky v Beskydech. Miluji květiny jak v živé tak i v sušené podobě. Tvorba květinových aranžma, věnců a kytic je 
+pro mně nejen koníčkem, ale i vášni.
+
 				</p>
 
-				<span class="text-brand-green font-medium">✔ We also deliver</span>
-
 				<div class="mt-8 flex items-center gap-x-8">
-					<Button url="/book">Book now</Button>
 					<ButtonCallUs />
 				</div>
 			</div>
@@ -41,6 +37,7 @@ import PizzaHero from "~/assets/images/pizza-hero.png";
 					alt="A description of my image."
 					loading={"eager"}
 					fetchpriority={"high"}
+					style={{ borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70% " }}
 				/>
 			</div>
 		</Hero>
@@ -48,40 +45,53 @@ import PizzaHero from "~/assets/images/pizza-hero.png";
 
 	<Section class:list={'bg-white'}>
 		<Article>
-			<h2>Welcome to AstroPie</h2>
+			<h2>Natálie Ruszová</h2>
 			<p>
-				Nestled in the heart of the city, <strong>AstroPie</strong> offers an authentic Italian dining experience
-				like no other. From the moment you step through our doors, you'll be transported to the vibrant streets of
-				Italy, where good food and great company are at the center of life.
+				<strong>Objevte krásu ručně vyráběných věnců a sušených květin.</strong><br/><br/>
+				Každý kousek je tvořen s láskou a pečlivostí z těch nejlepších přírodních materiálů. 
+				Najdete u nás podzimní i celoroční věnce, elegantní dekorace i svatební kytice. 
+				Ať už hledáte originální dárek nebo jedinečnou výzdobu, vždy u nás najdete něco, co potěší.
 			</p>
 
-			<h3>Our Story</h3>
-			<p>
-				Founded in <em>1998</em>, our family-owned restaurant has always been a labor of love. Inspired by the
-				recipes passed down through generations, we bring the <u>rich culinary heritage</u> of Italy to your plate.
-				Every dish tells a story, and every meal is a celebration of flavor.
-			</p>
-
-			<h3>Our Philosophy</h3>
-			<blockquote>"The secret ingredient is always love."</blockquote>
-			<p>
-				At AstroPie, we believe in the simple joy of fresh ingredients, time-honored techniques, and a
-				passion for creating memorable meals. From our hand-rolled pasta to our wood-fired pizzas, every bite is
-				crafted with care.
-			</p>
-
-			<h4>What Makes Us Special?</h4>
 			<ul>
-				<li><strong>Authenticity:</strong> Traditional recipes, just like Nonna used to make.</li>
-				<li><strong>Fresh Ingredients:</strong> Locally sourced produce and imported Italian staples.</li>
-				<li><strong>Warm Atmosphere:</strong> A place where everyone feels like family.</li>
+				<li>✔ Rychlé dodání do druhého dne</li>
+				<li>✔ Výroba na zakázku</li>
+				<li>📞 Zavolejte nám: 605 157 739</li>
 			</ul>
 
-			<h3>Join Us</h3>
+			<h3>Vítejte u Natálie Ruszové</h3>
 			<p>
-				Whether you're celebrating a special occasion or simply indulging in the pleasures of Italian cuisine, <strong
-					>AstroPie</strong
-				> is the perfect destination. <em>Come for the food, stay for the memories.</em>
+				Tvorba věnců a sušených květin je pro mě nejen práce, ale i vášeň. 
+				Od prvé chvíle, kdy vezmu do ruky přírodní materiál, až po finální detail, 
+				vzniká jedinečné dílo, které vnese do vašeho domova eleganci, radost a harmonii.
+			</p>
+
+			<h3>Náš příběh</h3>
+			<p>
+				Založila jsem svou tvorbu z touhy přinést lidem kousek přírody do jejich životů. 
+				Každý věnec a každá kytice vychází z tradic i moderního designu – 
+				a v každém kousku se odráží příběh, emoce a osobní přístup.
+			</p>
+
+			<h3>Naše filozofie</h3>
+			<blockquote>„Tajemstvím krásné dekorace je vždy láska.“</blockquote>
+			<p>
+				Věřím v jednoduchost přírodních materiálů, poctivou ruční práci a radost, 
+				ktoru dekorace přináší. Každý věnec či kytice je tvořen s péčí, aby dlouho těšil a zdobil.
+			</p>
+
+			<h4>Co nás dělá výjimečnými?</h4>
+			<ul>
+				<li><strong>Autenticita:</strong> Každý kus je originál, vyráběný ručně.</li>
+				<li><strong>Přírodní materiály:</strong> Používám sušené květiny a sezónní dekorace.</li>
+				<li><strong>Osobní přístup:</strong> Dekorace na míru podle vašich představ.</li>
+			</ul>
+
+			<h3>Přidejte se k nám</h3>
+			<p>
+				Ať už hledáte výzdobu pro svatbu, smuteční věnec nebo dekoraci pro zútulnění domova, 
+				u mě vždy najdete jedinečný kousek s osobním dotekem. 
+				Přijďte si vybrat, nebo si nechte vytvořit dekoraci na míru.
 			</p>
 		</Article>
 	</Section>
