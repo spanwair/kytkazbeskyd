@@ -178,6 +178,10 @@ p {
 	@apply bg-brand-red hover:bg-brand-red/80 text-white focus-visible:outline-brand-red;
 }
 
+.button-orange {
+	@apply bg-orange-500 hover:bg-orange-600 text-white focus-visible:outline-orange-500;
+}
+
 .menu-item-highlighted.menu-item-highlighted {
 	@apply text-white bg-brand-green px-4 rounded-full py-1.5 hover:bg-brand-green/80 hover:text-white;
 }

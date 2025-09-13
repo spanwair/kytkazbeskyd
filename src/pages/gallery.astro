@@ -21,7 +21,7 @@ Objevte jedinečné ručně vyráběné dekorace, které přinesou do vašeho do
 	<div class="masonry-grid grid grid-cols-2 lg:grid-cols-3 pb-16 lg:pb-32">
 		{
 			gallery.map((item, index) => (
-				<div class="masonry-grid-item">
+				<div class="masonry-grid-item relative">
 					<a href={item.data.image.src} class="glightbox">
 						<Picture
 							src={item.data.image}
@@ -30,6 +30,12 @@ Objevte jedinečné ručně vyráběné dekorace, které přinesou do vašeho do
 							loading={index < 3 ? "eager" : "lazy"}
                             fetchpriority={index < 3 ? "high" : "auto"}
 						/>
+					</a>
+					<a 
+						href={`/book?message=${encodeURIComponent('Zajímá mě: ' + item.data.alt)}`}
+						class="text-center absolute bottom-2 left-1/2 transform -translate-x-1/2 button button-green !py-1 !text-sm z-10 w-2/5"
+					>
+						Objednat tento výrobek
 					</a>
 				</div>
 			))
