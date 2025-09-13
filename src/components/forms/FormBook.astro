@@ -1,7 +1,4 @@
 ---
-const message = Astro.url.searchParams.get('message');
-console.log('message :>> ', message);
-const decodedMessage = message ? decodeURIComponent(message.replace(/\+/g, ' ')) : '';
 ---
 
 <form action="https://api.web3forms.com/submit" method="POST">
@@ -39,7 +36,7 @@ const decodedMessage = message ? decodeURIComponent(message.replace(/\+/g, ' '))
           rows="4"
           required
           placeholder="Uveďte zde veškeré detaily a požadavky"
-        >{decodedMessage}</textarea>
+        ></textarea>
       </div>
     </div>
 
@@ -72,25 +69,10 @@ const decodedMessage = message ? decodeURIComponent(message.replace(/\+/g, ' '))
     var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=appUrl+"/js/formbricks.umd.cjs",t.onload=function(){window.formbricks?window.formbricks.setup({environmentId:environmentId,appUrl:appUrl}):console.error("Formbricks library failed to load properly. The formbricks object is not available.");};
     var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e);
   }();
-  
-  // If you need React-like behavior
-  function fillMessage() {
-    const urlParams = new URLSearchParams(window.location.search);
-      const message = urlParams.get('message');
-      console.log('message :>> ', message);
-      
-      if (message) {
-        const messageField = document.getElementById('message');
-        if (messageField) {
-          messageField.value = decodeURIComponent(message.replace(/\+/g, ' '));
-        }
-      }
-  }
-  fillMessage()
   document.addEventListener("astro:page-load", () => {
     const urlParams = new URLSearchParams(window.location.search);
+    console.log('urlParams :>> ', urlParams);
       const message = urlParams.get('message');
-      console.log('message :>> ', message);
       
       if (message) {
         const messageField = document.getElementById('message');
@@ -99,6 +81,5 @@ const decodedMessage = message ? decodeURIComponent(message.replace(/\+/g, ' '))
         }
       }
     // Your code here
-  console.log('object');
 });
 </script>
