@@ -1,5 +1,6 @@
 ---
 const message = Astro.url.searchParams.get('message');
+console.log('message :>> ', message);
 const decodedMessage = message ? decodeURIComponent(message.replace(/\+/g, ' ')) : '';
 ---
 
@@ -71,60 +72,33 @@ const decodedMessage = message ? decodeURIComponent(message.replace(/\+/g, ' '))
     var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=appUrl+"/js/formbricks.umd.cjs",t.onload=function(){window.formbricks?window.formbricks.setup({environmentId:environmentId,appUrl:appUrl}):console.error("Formbricks library failed to load properly. The formbricks object is not available.");};
     var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e);
   }();
-</script>
-<script is:inline>
-  function fillMessageFromURL() {
+  
+  // If you need React-like behavior
+  function fillMessage() {
     const urlParams = new URLSearchParams(window.location.search);
-    console.log('urlParams :>> ', urlParams);
-    const message = urlParams.get('message');
-    console.log('message :>> ', message);
-    
-    if (message) {
-      const messageField = document.getElementById('message');
-      if (messageField && !messageField.value) { // Only fill if empty
-        messageField.value = decodeURIComponent(message);
-        console.log('Message field filled with:', messageField.value);
-      }
-    }
-  }
-  
-  // Function to ensure DOM is ready
-  function whenReady(fn) {
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', fn);
-    } else {
-      fn();
-    }
-  }
-  
-  // Run when DOM is ready
-  whenReady(fillMessageFromURL);
-  
-  // Set up observer for dynamic content
-  const observer = new MutationObserver(function(mutations) {
-    mutations.forEach(function(mutation) {
-      if (mutation.type === 'childList') {
+      const message = urlParams.get('message');
+      console.log('message :>> ', message);
+      
+      if (message) {
         const messageField = document.getElementById('message');
-        if (messageField && !messageField.value) {
-          fillMessageFromURL();
+        if (messageField) {
+          messageField.value = decodeURIComponent(message.replace(/\+/g, ' '));
         }
       }
-    });
-  });
-  
-  // Start observing
-  whenReady(function() {
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
-  });
-  
-  // Also listen for navigation events
-  window.addEventListener('popstate', () => setTimeout(fillMessageFromURL, 100));
-  document.addEventListener('visibilitychange', function() {
-    if (!document.hidden) {
-      setTimeout(fillMessageFromURL, 100);
-    }
-  });
+  }
+  fillMessage()
+  document.addEventListener("astro:page-load", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+      const message = urlParams.get('message');
+      console.log('message :>> ', message);
+      
+      if (message) {
+        const messageField = document.getElementById('message');
+        if (messageField) {
+          messageField.value = decodeURIComponent(message.replace(/\+/g, ' '));
+        }
+      }
+    // Your code here
+  console.log('object');
+});
 </script>

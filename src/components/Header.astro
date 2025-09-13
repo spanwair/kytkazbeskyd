@@ -18,10 +18,11 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
       <a href="/" class="-m-1.5 p-1.5">
         <Picture
           src={logo}
-          alt="AstroPie logo"
+          alt="Kytka z beskyd"
           width={250}
           height={250}
-          class="h-[250px] w-[250px] object-contain"
+          class="w-[125px] h-[125px] md:w-[250px] md:h-[250px] object-contain"
+          sizes="(max-width: 768px) 125px, 250px"
         />
       </a>
       <div class="flex lg:hidden">
