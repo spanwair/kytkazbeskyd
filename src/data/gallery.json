@@ -1,74 +1,74 @@
 [
   {
     "id": 1,
-    "title": "Gallery Image 1",
+    "title": "Galerie obrázek 1",
     "image": "/src/assets/images/images/gallery/1.jpeg",
-    "alt": "Gallery image 1"
+    "alt": "Galerie obrázek 1"
   },
   {
     "id": 2,
-    "title": "Gallery Image 2",
+    "title": "Galerie obrázek 2",
     "image": "/src/assets/images/images/gallery/2.jpg",
-    "alt": "Gallery image 2"
+    "alt": "Galerie obrázek 2"
   },
   {
     "id": 3,
-    "title": "Gallery Image 3",
+    "title": "Obrázek 3 v galerii",
     "image": "/src/assets/images/images/gallery/3.jpg",
-    "alt": "Gallery image 3"
+    "alt": "Obrázek 3 v galerii"
   },
   {
     "id": 4,
-    "title": "Gallery Image 4",
+    "title": "Obrázek 4 v galerii",
     "image": "/src/assets/images/images/gallery/4.jpeg",
-    "alt": "Gallery image 4"
+    "alt": "Obrázek 4 v galerii"
   },
   {
     "id": 5,
-    "title": "Gallery Image 5",
+    "title": "Obrázek 5 v galerii",
     "image": "/src/assets/images/images/gallery/5.jpeg",
-    "alt": "Gallery image 5"
+    "alt": "Obrázek 5 v galerii"
   },
   {
     "id": 6,
-    "title": "Gallery Image 6",
+    "title": "Obrázek 6 v galerii",
     "image": "/src/assets/images/images/gallery/6.jpeg",
-    "alt": "Gallery image 6"
+    "alt": "Obrázek 6 v galerii"
   },
   {
     "id": 7,
-    "title": "Gallery Image 7",
+    "title": "Obrázek 7 v galerii",
     "image": "/src/assets/images/images/gallery/7.jpg",
-    "alt": "Gallery image 7"
+    "alt": "Obrázek 7 v galerii"
   },
   {
     "id": 8,
-    "title": "Gallery Image 8",
+    "title": "Obrázek 8 v galerii",
     "image": "/src/assets/images/images/gallery/8.jpg",
-    "alt": "Gallery image 8"
+    "alt": "Obrázek 8 v galerii"
   },
   {
     "id": 9,
-    "title": "Gallery Image 9",
+    "title": "Obrázek 9 v galerii",
     "image": "/src/assets/images/images/gallery/9.jpeg",
-    "alt": "Gallery image 9"
+    "alt": "Obrázek 9 v galerii"
   },
   {
     "id": 10,
-    "title": "Gallery Image 10",
+    "title": "Obrázek 10 v galerii",
     "image": "/src/assets/images/images/gallery/10.jpeg",
-    "alt": "Gallery image 10"
+    "alt": "Obrázek 10 v galerii"
   },
   {
     "id": 11,
-    "title": "Gallery Image 11",
+    "title": "Obrázek 11 v galerii",
     "image": "/src/assets/images/images/gallery/11.jpg",
-    "alt": "Gallery image 11"
+    "alt": "Obrázek 11 v galerii"
   },
   {
     "id": 12,
-    "title": "Gallery Image 12",
+    "title": "Obrázek 12 v galerii",
     "image": "/src/assets/images/images/gallery/12.jpeg",
-    "alt": "Gallery image 12"
+    "alt": "Obrázek 12 v galerii"
   }
 ]
