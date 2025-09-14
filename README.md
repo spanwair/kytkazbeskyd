@@ -1,247 +1,59 @@
-# AstroPie
-
-AstroPie is a free theme for the Astro framework, designed to provide a beautiful and functional starting point for your next restaurant or bistro website. Whether you're running an Italian restaurant, a cozy bistro, or any other type of dining establishment, AstroPie has you covered with its clean design and easy-to-use components.
+# 🌸 Natália Ruszová
 
-## 🌟 About AstroPie
-
-AstroPie is perfect for restaurant owners, developers, and designers who want to quickly set up a stylish and responsive website. It leverages modern web technologies to ensure a smooth and performant user experience.
-
-## 🛠️ Technologies Used
-
--   **Astro**: The core framework for building fast, content-focused websites.
--   **TailwindCSS**: A utility-first CSS framework for rapid UI development.
--   **Alpine.js**: A lightweight JavaScript framework for adding interactivity.
--   **Swiper**: A modern slider library for creating responsive sliders.
--   **GLightbox**: A pure JavaScript lightbox for displaying images and videos.
+Jsem z Hrádku – malebné vesničky v Beskydech.  
+Miluji květiny v živé i sušené podobě.  
+Tvorba květinových aranžmá, věnců a kytic je pro mě nejen koníčkem, ale i vášní.
 
-## 🚀 Installation and Deployment
+---
 
-To get started with AstroPie, follow these steps:
+## 🌿 Objevte krásu ručně vyráběných věnců a sušených květin
 
-1. **Clone AstroPie**:
+Každý kousek je tvořen s **láskou a pečlivostí** z těch nejlepších přírodních materiálů.  
+Najdete u nás:
 
-    ```sh
-    git clone https://github.com/wpinfusion/AstroPie.git
-    ```
+- 🍂 **Podzimní i celoroční věnce**
+- 🌸 **Elegantní dekorace**
+- 💍 **Svatební kytice**
 
-2. **Install Dependencies**:
+Ať už hledáte originální dárek nebo jedinečnou výzdobu, vždy u nás objevíte něco, co potěší.
 
-    ```sh
-    npm install
-    ```
+---
 
-3. **Run Development Server**:
+## 🚚 Naše služby
 
-    ```sh
-    npm run dev
-    ```
+- ✅ Možnost **dodání do druhého dne** (běžně 7–14 dní)
+- 🎨 **Výroba na zakázku** podle vašich představ
+- 📞 Zavolejte nám: **605 157 739**
 
-4. **Build for Production**:
+---
 
-    ```sh
-    npm run build
-    ```
+## ✨ Náš příběh
 
-## 📂 Project Structure
+Moje tvorba vznikla z touhy přinést lidem **kousek přírody do jejich životů**.  
+Každý věnec a každá kytice vychází z tradic i moderního designu – a v každém kousku se odráží **příběh, emoce a osobní přístup**.
 
-Inside of your AstroPie project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   ├── pages/
-│   │   ├── index.astro
-│   │   ├── about-us.astro
-│   │   ├── menu.astro
-│   │   ├── gallery.astro
-│   │   ├── contact.astro
-│   │   └── book.astro
-│   └── styles/
-└── package.json
-```
+## 💡 Naše filozofie
 
-## 📄 Premade Pages
+> „Tajemstvím krásné dekorace je vždy láska.“
 
--   Home: index.astro
--   About Us: about-us.astro
--   Menu: menu.astro
--   Gallery: gallery.astro
--   Contact: contact.astro
--   Book a Table: book.astro
+Věřím v **jednoduchost přírodních materiálů**, poctivou ruční práci a radost, kterou dekorace přinášejí.  
+Každý věnec či kytice je tvořen s péčí, aby dlouho těšil a zdobil.
 
-## 🧩 Available Components
+---
 
--   Article: Article.astro
--   Badge: Badge.astro
--   Button: Button.astro
--   ButtonCallUs: ButtonCallUs.astro
--   Card: Card.astro
--   Footer: Footer.astro
--   FormBook: FormBook.astro
--   FormContact: FormContact.astro
--   Grid: Grid.astro
--   Header: Header.astro
--   Heading: Heading.astro
--   Hero: Hero.astro
--   Menu: Menu.astro
--   ReviewSlider: ReviewSlider.astro
--   Section: Section.astro
--   WideImage: WideImage.astro
+## 🌟 Co nás dělá výjimečnými?
 
-## 📚 Component Documentation
+- 🌿 **Autenticita** – každý kus je originál, vyráběný ručně
+- 🌼 **Přírodní materiály** – sušené květiny a sezónní dekorace
+- 💌 **Osobní přístup** – dekorace na míru podle vašich představ
 
-### Article
+---
 
-A component for displaying articles.
+## 💖 Krása vždy potěší
 
-```astro
-<Article contain={true}>
-  <h1>Title</h1>
-  <p>Content goes here...</p>
-</Article>
-```
+Ať už hledáte **výzdobu pro svatbu, smuteční věnec nebo dekoraci pro zútulnění domova**,  
+u nás vždy najdete **jedinečný kousek s osobním dotekem**.
 
-### Badge
-
-A component for displaying badges.
-
-```astro
-<Badge color="green" title="New" />
-```
-
-### Button
-
-A component for displaying buttons.
-
-```astro
-<Button color="green" url="/contact">Contact Us</Button>
-```
-
-### ButtonCallUs
-
-A component for displaying a call-to-action button.
-
-```astro
-<ButtonCallUs />
-```
-
-### Card
-
-A component for displaying cards.
-
-```astro
-<Card>
-  <h2>Card Title</h2>
-  <p>Card content goes here...</p>
-</Card>
-```
-
-### Footer
-
-A component for displaying the footer.
-
-```astro
-<Footer />
-```
-
-### FormBook
-
-A component for displaying a booking form.
-
-```astro
-<FormBook />
-```
-
-### FormContact
-
-A component for displaying a contact form.
-
-```astro
-<FormContact />
-```
-
-### Grid
-
-A component for displaying a grid layout.
-
-```astro
-<Grid>
-  <div slot="grid-content-1">Content 1</div>
-  <div slot="grid-content-2">Content 2</div>
-  <div slot="grid-content-3">Content 3</div>
-</Grid>
-```
-
-### Header
-
-A component for displaying the header.
-
-```astro
-<Header />
-```
-
-### Heading
-
-A component for displaying headings.
-
-```astro
-<Heading>
-  <h1 slot="heading-title">Title</h1>
-  <p slot="heading-content">Content goes here...</p>
-</Heading>
-```
-
-### Hero
-
-A component for displaying the hero section.
-
-```astro
-<Hero>
-  <div slot="hero-content-left">Left Content</div>
-  <div slot="hero-content-right">Right Content</div>
-</Hero>
-```
-
-### Menu
-
-A component for displaying a menu.
-
-```astro
-<Menu />
-```
-
-### ReviewSlider
-
-A component for displaying a review slider.
-
-```astro
-<ReviewSlider />
-```
-
-### Section
-
-A component for displaying a section.
-
-```astro
-<Section>
-  <p>Section content goes here...</p>
-</Section>
-```
-
-### WideImage
-
-A component for displaying a wide image.
-
-```astro
-<WideImage src={importedImage} alt="alt description" />
-```
-
-## 👀 Stuck?
-
-If you have any questions or need help with AstroPie, feel free to reach out to me at info@wpinfusion.com, or open an issue on the [AstroPie GitHub repository](https://github.com/wpinfusion/AstroPie)
+🌸 Přijďte si vybrat, nebo si nechte vytvořit dekoraci na míru. 🌸

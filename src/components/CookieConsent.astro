@@ -2,55 +2,70 @@
 import { Picture } from "astro:assets";
 import cookieIcon from "~/assets/icons/cookie.svg";
 ---
-
 <div class="fixed bottom-0 right-0 mb-4 mr-4 w-64" id="cookieConsent" style="display: none">
-    <div class="bg-white rounded-lg shadow-lg p-4">
-        <div class="flex items-center justify-between mb-2">
-            <div class="flex items-center">
-                <Picture src={cookieIcon} alt="Cookie" width={24} height={24} class="mr-2" />
-                <span class="text-gray-700 font-bold text-sm">Zásady používání souborů cookie</span>
-            </div>
-            <button 
-                class="text-gray-500 hover:text-gray-700 focus:outline-none"
-                id="closeCookieConsent"
-            >
-                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
-        </div>
-        <p class="text-gray-600 text-sm">
-          Používáme soubory cookie, abychom vám mohli nabídnout lepší služby. Pokračováním v prohlížení této stránky souhlasíte s používáním souborů cookie.
-        </p>
-        <button 
-            class="mt-4 bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded"
-            id="acceptCookies"
-        >
-            Povolit
-        </button>
-    </div>
+<div class="bg-white rounded-lg shadow-lg p-4">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center">
+<Picture src={cookieIcon} alt="Cookie" width={24} height={24} class="mr-2" />
+<span class="text-gray-700 font-bold text-sm">Zásady používání souborů cookie</span>
 </div>
-
+<button
+class="text-gray-500 hover:text-gray-700 focus:outline-none"
+id="closeCookieConsent"
+>
+<svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+</svg>
+</button>
+</div>
+<p class="text-gray-600 text-sm">
+ Používáme soubory cookie, abychom vám mohli nabídnout lepší služby. Pokračováním v prohlížení této stránky souhlasíte s používáním souborů cookie.
+</p>
+<button
+class="mt-4 bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded"
+id="acceptCookies"
+>
+ Povolit
+</button>
+</div>
+</div>
 <script is:inline>
-    // Only show if no consent decision was made
-    if (!localStorage.getItem('cookieConsent')) {
-        document.getElementById('cookieConsent').style.display = 'block';
-    }
+// Function to load Google Analytics
+function loadGoogleAnalytics() {
+  // Create and load the gtag script
+  const script = document.createElement('script');
+  script.src = 'https://www.googletagmanager.com/gtag/js?id=G-D22YLF35P9';
+  script.async = true;
+  document.head.appendChild(script);
+  
+  // Initialize dataLayer and gtag
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D22YLF35P9');
+  
+  // Make gtag globally available
+  window.gtag = gtag;
+}
 
-    // Handle accept button
-    document.getElementById('acceptCookies')?.addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'accepted');
-        document.getElementById('cookieConsent').style.display = 'none';
-        // Initialize GA
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-D22YLF35P9');
-    });
+// Check if consent was already given and load GA
+if (localStorage.getItem('cookieConsent') === 'accepted') {
+  loadGoogleAnalytics();
+} else if (!localStorage.getItem('cookieConsent')) {
+  // Only show banner if no consent decision was made
+  document.getElementById('cookieConsent').style.display = 'block';
+}
 
-    // Handle close button (treat as rejection)
-    document.getElementById('closeCookieConsent')?.addEventListener('click', () => {
-        localStorage.setItem('cookieConsent', 'rejected');
-        document.getElementById('cookieConsent').style.display = 'none';
-    });
+// Handle accept button
+document.getElementById('acceptCookies')?.addEventListener('click', () => {
+  localStorage.setItem('cookieConsent', 'accepted');
+  document.getElementById('cookieConsent').style.display = 'none';
+  loadGoogleAnalytics();
+});
+
+// Handle close button (treat as rejection)
+document.getElementById('closeCookieConsent')?.addEventListener('click', () => {
+  localStorage.setItem('cookieConsent', 'rejected');
+  document.getElementById('cookieConsent').style.display = 'none';
+});
 </script>
