@@ -1,8 +1,10 @@
 ---
 import { Picture } from "astro:assets";
 import logo from "~/assets/images/images/logo.jpeg";
+import instagram from "~/assets/images/instagram.jpg";
 const currentYear = new Date().getFullYear();
 import { siteName } from "~/data/config";
+import { menuMain } from "~/data/menus";
 ---
 
 <footer>
@@ -14,6 +16,51 @@ import { siteName } from "~/data/config";
       height={75}
       class="mx-auto h-[75px] w-[150px] object-contain"
     />
-    <p class="mt-10 text-center text-sm">&copy; {currentYear} {siteName}. All rights reserved. <a class="underline" href="/privacy-policy">Privacy policy</a></p>
+    
+    <nav class="mt-8">
+      <ul class="flex flex-wrap justify-center gap-4 md:gap-8">
+        {menuMain.map((item) => (
+          <li key={item.url}>
+            <a 
+              href={item.url} 
+              class="text-sm text-gray-700 hover:text-brand-green transition-colors"
+            >
+              {item.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+    
+    <div class="mt-6 flex justify-center gap-4">
+      <a 
+        href="https://www.facebook.com/kytkazbeskyd" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-full bg-blue-600 px-4 py-2 text-white transition-colors hover:bg-blue-700"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+        </svg>
+        Facebook
+      </a>
+      <a 
+        href="https://www.instagram.com/kytkazbeskyd" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 px-4 py-2 text-white transition-colors hover:opacity-90"
+      >
+        <Picture
+          src={instagram}
+          alt="Instagram"
+          width={20}
+          height={20}
+          class="h-5 w-5 object-contain"
+        />
+        Instagram
+      </a>
+    </div>
+    
+    <p class="mt-10 text-center text-sm">&copy; {currentYear} {siteName}. Všechna práva vyhraná. <a class="underline" href="/privacy-policy">Zásady ochrany osobních údajů</a></p>
   </div>
 </footer>
