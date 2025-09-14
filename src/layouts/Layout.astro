@@ -36,9 +36,12 @@ import { siteLang, themeColor } from "~/data/config";
 		<meta name="twitter:description" content="Každý věnec i kytice jsou originál – vytvořené s láskou a z přírodních materiálů. Elegantní dekorace i dárky na míru." />
 		<meta name="twitter:image" content={`${baseUrl}/3.jpg`} />
 
+		<link rel="icon" type="image/x-icon" href="/favicon-logo.ico" />
+		<link rel="shortcut icon" type="image/x-icon" href="/favicon-logo.ico" />
+
 		<title>Ručně vyráběné věnce a sušené květiny | Natálie Ruszová</title>
 		<ClientRouter />		
-		<CookieConsent client:load />
+		<CookieConsent />
 	</head>
 	<body>
 		<Header />
