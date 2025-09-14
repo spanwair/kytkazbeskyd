@@ -1,26 +1,61 @@
 ---
 ---
 
+<style>
+  input, textarea, select {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: var(--color-gray-300);
+    padding-inline: calc(var(--spacing) * 4);
+    padding-block: calc(var(--spacing) * 3);
+  }
+  
+  input:focus, textarea:focus, select:focus {
+    --tw-ring-shadow: var(--tw-ring-inset,) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color, currentcolor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    --tw-ring-color: var(--color-brand-green);
+    --tw-outline-style: none;
+    outline-style: none;
+  }
+  
+  button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    background-color: var(--color-gray-300);
+  }
+  
+  button:disabled svg {
+    opacity: 0.5;
+  }
+  
+  .required-field::after {
+    content: " *";
+    color: red;
+  }
+</style>
+
 <form action="https://api.web3forms.com/submit" method="POST">
   <input type="hidden" name="access_key" value="ea3a8db2-5722-43ce-a6d3-8fff73904449">
   
   <div class="flex flex-col gap-8 mx-auto max-w-md">
     <div>
-      <label for="name">Jméno a příjmení</label>
+      <label for="name" class="required-field">Jméno a příjmení</label>
       <div class="mt-2">
         <input type="text" name="name" id="name" required />
       </div>
     </div>
 
     <div>
-      <label for="email">E-mail</label>
+      <label for="email" class="required-field">E-mail</label>
       <div class="mt-2 grid grid-cols-1">
         <input type="email" name="email" id="email" required />
       </div>
     </div>
 
     <div>
-      <label for="phone">Telefon</label>
+      <label for="phone" class="required-field">Telefon</label>
       <div class="mt-2">
         <input type="text" name="phone" id="phone" required />
       </div>
@@ -28,7 +63,20 @@
     </div>
 
     <div>
-      <label for="message">Co přesně si přejete zhotovit</label>
+      <label for="size">Velikost a cena</label>
+      <div class="mt-2">
+        <select name="size" id="size" required>
+          <option value="">Vyberte velikost</option>
+          <option value="malý 15-25cm 190-320kč">malý 15-25cm 190-320kč</option>
+          <option value="střední 25-35cm 380-680kč">střední 25-35cm 380-680kč</option>
+          <option value="větší 36-46cm 580-880kč">větší 36-46cm 580-880kč</option>
+          <option value="nad 55 cm cena od 1100kč">nad 55 cm cena od 1100kč</option>
+        </select>
+      </div>
+    </div>
+
+    <div>
+      <label for="message" class="required-field">Co přesně si přejete zhotovit</label>
       <div class="mt-2">
         <textarea
           name="message"
@@ -63,23 +111,36 @@
 </form>
 
 <script is:inline>
-  !function(){
-    var appUrl = "https://app.formbricks.com";
-    var environmentId = "cmfi9tpcq1wroy501o68x1u57";
-    var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src=appUrl+"/js/formbricks.umd.cjs",t.onload=function(){window.formbricks?window.formbricks.setup({environmentId:environmentId,appUrl:appUrl}):console.error("Formbricks library failed to load properly. The formbricks object is not available.");};
-    var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(t,e);
-  }();
-  document.addEventListener("astro:page-load", () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    console.log('urlParams :>> ', urlParams);
-      const message = urlParams.get('message');
-      
-      if (message) {
-        const messageField = document.getElementById('message');
-        if (messageField) {
-          messageField.value = decodeURIComponent(message.replace(/\+/g, ' '));
+  document.addEventListener('astro:page-load', () => {
+    const form = document.querySelector('form');
+    const inputs = form.querySelectorAll('input:not([type="hidden"]), textarea');
+    const submitButton = form.querySelector('button[type="submit"]');
+    
+    function checkFormValidity() {
+      let allValid = true;
+      inputs.forEach(input => {
+        if (!input.value.trim()) {
+          allValid = false;
         }
+      });
+      submitButton.disabled = !allValid;
+    }
+    
+    inputs.forEach(input => {
+      input.addEventListener('input', checkFormValidity);
+      input.required = true;
+    });
+    
+    checkFormValidity();
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const message = urlParams.get('message');
+    if (message) {
+      const messageField = document.getElementById('message');
+      if (messageField) {
+        messageField.value = decodeURIComponent(message.replace(/\+/g, ' '));
+        checkFormValidity();
       }
-    // Your code here
-});
+    }
+  });
 </script>
