@@ -8,4 +8,5 @@ Running handoff log for the flower-shop-homepage-redesign plan - each task appen
 - Task 4 (Implementor): homepage rebuilt, bun run build clean. Files changed: src/components/CategoryCard.astro (new), src/pages/index.astro, src/components/Header.astro, src/components/Footer.astro, src/data/menus.js, src/data/config.ts, src/layouts/Layout.astro. See task-4-implementor-report.md.
 - Task 5 (UX Focus): accessibility review done, 2 issues fixed directly, 4 issues filed for Implementor. See ux-review.md.
 - Task 6 (Tester): 5/5 checks passed. See test-report.md.
+- Task 7 (Suggester): 13 follow-up items logged. See suggestions.md.
 - Task 8 (Disclaimer): audit complete, 6 items require client confirmation. See disclaimers.md.
