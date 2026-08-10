@@ -6,22 +6,22 @@ export const menuMain = [
   },
   {
     name: "Kytice",
-    url: "#kytice",
+    url: "/#kytice",
     highlighted: false,
   },
   {
     name: "Věnce a dekorace",
-    url: "#vence-a-dekorace",
+    url: "/#vence-a-dekorace",
     highlighted: false,
   },
   {
     name: "Svatby",
-    url: "#svatby",
+    url: "/#svatby",
     highlighted: false,
   },
   {
     name: "Zahrady",
-    url: "#zahrady",
+    url: "/#zahrady",
     highlighted: false,
   },
   {
@@ -31,7 +31,7 @@ export const menuMain = [
   },
   {
     name: "O mně",
-    url: "#o-mne",
+    url: "/#o-mne",
     highlighted: false,
   },
   {
