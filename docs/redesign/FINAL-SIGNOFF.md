@@ -7,20 +7,17 @@
 
 ---
 
-## 0. Recommendation: NO-GO (do not merge yet)
+## 0. Recommendation: NO-GO (do not merge yet) — updated after a post-signoff fix round
 
-**Do not merge this branch into `main` in its current state.**
+**Do not merge this branch into `main` in its current state.** One of the two gates below has since been closed; the other has not.
 
-There are two independent gates, one technical and one legal.
-Both are described in full below; neither is a reason to throw away the work, which is otherwise well built and well documented.
-
-| # | Gate | Type | Who resolves it |
+| # | Gate | Type | Status |
 |---|---|---|---|
-| **B1** | The production build ships the homepage with ~49 of its CSS rules missing. The page is visually broken in `bun run build` output, while being correct in `bun run dev`. | Technical, introduced by this branch | Engineering, before merge |
-| **B2** | Photo usage rights for all 23 client photos are unverified (`disclaimers.md` item e), and `main` auto-deploys to the public internet on every push. | Legal / client | Client confirmation, before merge |
+| **B1** | The production build shipped the homepage with ~49 of its CSS rules missing (visually broken in `bun run build` output, correct in `bun run dev`). | Technical, introduced by this branch | **RESOLVED in commit `4bf1629`** (removed the `@playform/inline` integration from `astro.config.mjs`) and independently re-verified by a second reviewer: 0 missing CSS rules across all 6 pages, all `focus-visible:outline-*` rules confirmed delivered, shared stylesheet restored to 49,812 bytes. See addendum at the end of Section 1. |
+| **B2** | Photo usage rights for all 23 client photos are unverified (`disclaimers.md` item e), and `main` auto-deploys to the public internet on every push. | Legal / client | **Still open.** This is now the sole remaining blocker. |
 
-B2 is the item the human most needs to know about and is covered in Section 3.
-B1 is new, was not found by any of the eight prior specialists, and is covered immediately below.
+B2 is the item the human most needs to know about and is covered in Section 3 — with B1 closed, it is the only reason this branch isn't merge-ready.
+B1's original finding (as discovered, before the fix) is preserved below for the record.
 
 ---
 
@@ -99,6 +96,12 @@ Per this plan's Process Adaptation, substantial findings get written up rather t
 1. Reproduce with: `bun run build`, then compare the class tokens in `dist/index.html` against the CSS delivered to that page.
 2. Either remove `@playform/inline`, or configure it so it does not prune a stylesheet shared by multiple pages.
 3. Add a build-output check to the verification routine so "the build exited 0" is never again mistaken for "the built page is correct". This is the single most valuable process fix to come out of this branch.
+
+### Addendum: resolved post-signoff
+
+Option 2 above was dispatched as a one-shot fix (this plan's Process Adaptation allows exactly one fix wave plus one scoped re-review after the final whole-branch review, not a second open-ended round). `playformInline(...)` was removed from `astro.config.mjs` in commit `4bf1629`. An independent second reviewer re-audited from scratch (not by re-trusting either the original finding or the fix's own report): fresh `bun run build`, re-derived class-token counts matching this document's original figures exactly (164/141/125/152/156 tokens per page), and confirmed **0 missing CSS rules** on `index`, `contact`, `about-us`, `book`, and `privacy-policy`, and 3 harmless pre-existing false positives on `gallery` (third-party JS-hook classes, not Tailwind, not related to this bug). All 5 `focus-visible:outline-*` rule variants confirmed present with non-empty bodies; 39 focus-styled elements on the homepage alone, all covered. Shared stylesheet size confirmed at 49,812 bytes, matching this document's "integration off" prediction exactly, with `dist/index.html` no longer carrying any Beasties-inlined `<style>` block at all. Step 3 above (a permanent build-output check in the verification routine) was **not** done and remains an open process recommendation — see `suggestions.md`.
+
+The "What I did not do, and why" paragraph above, and the `git diff` claim that `astro.config.mjs` was unmodified, describe the state **at the time of the original finding**, before this addendum's fix round. They are preserved as the historical record of the finding; they no longer describe the current HEAD.
 
 ---
 
@@ -271,6 +274,7 @@ What the pipeline did not have was anyone looking at the artifact it actually pr
 Every render check in this branch went through the dev server; the one check that touched the real build only asserted that it exited 0.
 That is how a homepage that is perfect in source and perfect in `bun run dev` came to be shipped with a third of its stylesheet missing.
 
-**Recommendation: NO-GO.**
-Fix B1, get the client's answer on photo rights, then merge.
+**Recommendation: NO-GO — but only on B2 now.**
+B1 is fixed and independently re-verified (see Section 1's addendum).
+The sole remaining precondition for merge is the client's answer on photo usage rights (Section 6.1).
 Everything else in this document can be scheduled rather than resolved first.
