@@ -5,6 +5,8 @@
 
 Reviewed: `src/pages/index.astro`, `src/components/Header.astro`, `src/components/Footer.astro`, `src/components/CategoryCard.astro`, cross-checked against `docs/redesign/design-system.md`, `docs/redesign/page-spec.md`, `docs/redesign/task-4-implementor-report.md`, and `public/flowers-catalog.json`.
 
+> **Resolution update:** all 4 findings this review filed for the Implementor (Section 8, rows 1-4: heading hierarchy, footer signature contrast failure, footer icon tap targets, header icon tap targets) were fixed in commit `dbe0932` ("fix: address UX review findings"). None of the findings below marked "Filed for the Implementor" are still open. Left the rest of this document as originally written, since it's the record of what was found and why; see `dbe0932` for what changed.
+
 ---
 
 ## 1. Method
@@ -30,8 +32,8 @@ Fetched HTML heading order (`grep -oE '<h[1-6][^>]*>'` against the served page):
 ```
 
 - **Exactly one `<h1>`** - confirmed, pass.
-- **Finding (filed, not fixed): heading level skipped, h1 → h3.** The six `CategoryCard` titles render as `<h3>` immediately after the page's only `<h1>`, with no intervening `<h2>` for the category-grid section. WCAG 2.1 SC 1.3.1 (and general heading-outline best practice) expects heading levels not to be skipped, since screen-reader users navigate by heading level and a level-3 heading appearing before any level-2 heading misrepresents the section as a subsection of nothing. **Not fixed directly** - the correct fix is to add a section heading (e.g. an `<h2>`, visually hidden with `sr-only` if the mockup genuinely has no visible "Kategorie" heading, or visible if design allows) before the category grid, which is new markup/content, outside this task's attribute-only privilege. **Filed for the Implementor.**
-- **Secondary note (same finding, informational):** the footer's four `<h3>` badge titles come immediately after the `<h2>Moje tvorba</h2>` heading, which is level-valid (h2→h3) but semantically odd - the footer badges aren't a subsection of "Moje tvorba." Once the category-grid `<h2>` is added, a matching one for the footer badge band would give the whole page a clean, semantically correct outline. Rolled into the same filed item above.
+- **Finding (filed, RESOLVED in `dbe0932`): heading level skipped, h1 → h3.** The six `CategoryCard` titles render as `<h3>` immediately after the page's only `<h1>`, with no intervening `<h2>` for the category-grid section. WCAG 2.1 SC 1.3.1 (and general heading-outline best practice) expects heading levels not to be skipped, since screen-reader users navigate by heading level and a level-3 heading appearing before any level-2 heading misrepresents the section as a subsection of nothing. **Not fixed directly** - the correct fix is to add a section heading (e.g. an `<h2>`, visually hidden with `sr-only` if the mockup genuinely has no visible "Kategorie" heading, or visible if design allows) before the category grid, which is new markup/content, outside this task's attribute-only privilege. **Filed for the Implementor.** *(Resolved: an `sr-only` `<h2>Kategorie</h2>` was added before the category grid in commit `dbe0932`.)*
+- **Secondary note (same finding, RESOLVED in `dbe0932`):** the footer's four `<h3>` badge titles come immediately after the `<h2>Moje tvorba</h2>` heading, which is level-valid (h2→h3) but semantically odd - the footer badges aren't a subsection of "Moje tvorba." Once the category-grid `<h2>` is added, a matching one for the footer badge band would give the whole page a clean, semantically correct outline. Rolled into the same filed item above. *(Resolved: an `sr-only` `<h2>Proč si vybrat Kytka z Beskyd</h2>` was added before the footer badge band in commit `dbe0932`. Page now reads a clean h1→h2→h3 outline throughout.)*
 
 ---
 
@@ -58,7 +60,7 @@ All pairs below were computed independently from the raw hex values in `global.c
 | `accent-pink-soft` #d899a2 | `footer-dark` #474a2b | 3.94:1 | 3:1 (large text) | Not used for text in shipped code; fine as decoration |
 | **`accent-pink` #c56885** | **`footer-dark` #474a2b** | **2.49:1** | **3:1 (large text minimum)** | **FAILS - see finding below** |
 
-### Finding (filed, not fixed): footer signature text fails WCAG AA, and isn't in design-system.md's own table
+### Finding (filed, RESOLVED in `dbe0932`): footer signature text fails WCAG AA, and isn't in design-system.md's own table
 
 `src/components/Footer.astro`'s "Děkuji za vaši důvěru ♡" signature renders as:
 
@@ -70,7 +72,7 @@ All pairs below were computed independently from the raw hex values in `global.c
 - Against `bg-footer-dark` (`#474a2b`), this text measures **2.49:1**, which fails WCAG AA even under the large-text allowance (3:1 minimum for text ≥24px/≥18.7px-bold; this text is 36-48px so it does qualify as "large," but 2.49:1 still misses the 3:1 floor by a wide margin).
 - `page-spec.md` §2.6 assumed this was covered by "the contrast table's 'large text only' allowance," but `design-system.md`'s own contrast table never actually computed `accent-pink` on `footer-dark` - it only computed `accent-pink-soft` on `footer-dark` (3.94:1, a different token). This assumption was wrong and nobody caught it before this review.
 - Every other text element on `bg-footer-dark` correctly uses `text-cream` (8.21:1) or `text-blush` (7.82:1), both of which pass comfortably. `text-accent-pink` is the only outlier.
-- **Not fixed directly** - this requires changing a `text-*` color class, which is a color change outside this task's narrow privilege. **Filed for the Implementor**, with a concrete recommendation: swap `text-accent-pink` → `text-blush` (matches the hover state already used one line below on the phone/email links, 7.82:1, passes AA+AAA) or `text-cream` (8.21:1). Do **not** use `accent-pink-deep` as the "safer-sounding" fix - I computed it too and it's actually worse on this background (`accent-pink-deep` on `footer-dark` = **1.70:1**, since both colors are dark).
+- **Not fixed directly** - this requires changing a `text-*` color class, which is a color change outside this task's narrow privilege. **Filed for the Implementor**, with a concrete recommendation: swap `text-accent-pink` → `text-blush` (matches the hover state already used one line below on the phone/email links, 7.82:1, passes AA+AAA) or `text-cream` (8.21:1). Do **not** use `accent-pink-deep` as the "safer-sounding" fix - I computed it too and it's actually worse on this background (`accent-pink-deep` on `footer-dark` = **1.70:1**, since both colors are dark). *(Resolved: `text-accent-pink` was swapped to `text-blush` (7.82:1) in commit `dbe0932`, exactly as recommended here.)*
 
 ---
 
@@ -117,8 +119,8 @@ No changes needed in this category.
 ## 7. Tap target sizing
 
 - Hamburger and close buttons: `size-8` (32px) icon + `p-2.5` (10px) padding = ~52×52px effective target. **Pass** (comfortably over the WCAG 2.5.8 AA 24×24 minimum and the commonly-cited 44×44 comfort guideline).
-- **Finding (filed, not fixed): Footer Facebook/Instagram icon links are 20×20 CSS px with no padding.** `Footer.astro`'s social icons are `width="20" height="20"` raw SVGs inside an `<a>` with no padding classes, sitting `gap-4` (16px) apart. This is below the WCAG 2.5.8 AA minimum target size of 24×24 CSS pixels, and the 16px gap between them is less than the 24px "sufficient spacing" exception the same success criterion allows for undersized targets - so this doesn't qualify for the exception either. **Not fixed directly** - the fix (adding `p-2`/`p-2.5` padding, or growing the SVG) is a spacing/layout change outside this task's privilege. **Filed for the Implementor.**
-- **Finding (filed, not fixed): Header desktop cart/Instagram icon links are 24×24 with zero padding margin.** `size-6` (24px) icons with no padding technically sit right at the 24×24 minimum with no comfort margin, and no `gap` gives them breathing room from surrounding elements at some viewport widths. Not a hard failure like the footer icons, but worth the same treatment for consistency and touch-comfort. **Filed for the Implementor** as a lower-priority companion to the footer-icon finding, suggested fix: `p-1`/`p-2` padding on both the desktop and mobile header icon links.
+- **Finding (filed, RESOLVED in `dbe0932`): Footer Facebook/Instagram icon links are 20×20 CSS px with no padding.** `Footer.astro`'s social icons are `width="20" height="20"` raw SVGs inside an `<a>` with no padding classes, sitting `gap-4` (16px) apart. This is below the WCAG 2.5.8 AA minimum target size of 24×24 CSS pixels, and the 16px gap between them is less than the 24px "sufficient spacing" exception the same success criterion allows for undersized targets - so this doesn't qualify for the exception either. **Not fixed directly** - the fix (adding `p-2`/`p-2.5` padding, or growing the SVG) is a spacing/layout change outside this task's privilege. **Filed for the Implementor.** *(Resolved: `p-2` padding was added to both footer social links in commit `dbe0932`.)*
+- **Finding (filed, RESOLVED in `dbe0932`): Header desktop cart/Instagram icon links are 24×24 with zero padding margin.** `size-6` (24px) icons with no padding technically sit right at the 24×24 minimum with no comfort margin, and no `gap` gives them breathing room from surrounding elements at some viewport widths. Not a hard failure like the footer icons, but worth the same treatment for consistency and touch-comfort. **Filed for the Implementor** as a lower-priority companion to the footer-icon finding, suggested fix: `p-1`/`p-2` padding on both the desktop and mobile header icon links. *(Resolved: `p-2` padding was added to both desktop and mobile header cart/Instagram links in commit `dbe0932`.)*
 
 ---
 
@@ -126,10 +128,10 @@ No changes needed in this category.
 
 | # | Finding | Category | Disposition |
 |---|---|---|---|
-| 1 | Heading hierarchy skips h2 (h1 → h3 for category cards; footer h3s not under a relevant h2) | Structure | **Filed for Implementor** - needs a new (possibly `sr-only`) heading element |
-| 2 | Footer signature `text-accent-pink` on `bg-footer-dark` = 2.49:1, fails WCAG AA large-text minimum (3:1) | Contrast | **Filed for Implementor** - needs a `text-*` color class swap (recommend `text-blush` or `text-cream`) |
-| 3 | Footer Facebook/Instagram icon links are 20×20px, below WCAG 2.5.8 AA minimum, no spacing exception applies | Tap target | **Filed for Implementor** - needs padding/size increase |
-| 4 | Header desktop/mobile cart+Instagram icon links are 24×24px with no comfort margin | Tap target | **Filed for Implementor** - lower priority, needs padding |
+| 1 | Heading hierarchy skips h2 (h1 → h3 for category cards; footer h3s not under a relevant h2) | Structure | **Filed for Implementor - RESOLVED in `dbe0932`** (two `sr-only` `<h2>`s added) |
+| 2 | Footer signature `text-accent-pink` on `bg-footer-dark` = 2.49:1, fails WCAG AA large-text minimum (3:1) | Contrast | **Filed for Implementor - RESOLVED in `dbe0932`** (swapped to `text-blush`, 7.82:1) |
+| 3 | Footer Facebook/Instagram icon links are 20×20px, below WCAG 2.5.8 AA minimum, no spacing exception applies | Tap target | **Filed for Implementor - RESOLVED in `dbe0932`** (`p-2` added) |
+| 4 | Header desktop/mobile cart+Instagram icon links are 24×24px with no comfort margin | Tap target | **Filed for Implementor - RESOLVED in `dbe0932`** (`p-2` added) |
 | 5 | `aria-modal="true"` on mobile menu with no matching `role="dialog"` | ARIA | **Fixed directly** - added `role="dialog"` + `aria-label="Hlavní menu"` |
 | 6 | 19 interactive elements had no `focus-visible` styling, only the browser default | Focus visibility | **Fixed directly** - added `focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-{ink-green\|accent-pink-deep\|cream}` reusing existing generated theme utilities to all of them |
 | 7 | Alt text completeness/genericness | Alt text | **No issue found** - all 14 images have real, non-generic Czech alt text; 3 documented catalog-typo corrections verified present |
@@ -137,7 +139,9 @@ No changes needed in this category.
 | 9 | Escape-to-close mobile menu | Keyboard | **No issue found** - confirmed still functional |
 | 10 | Exactly one `<h1>` | Structure | **No issue found** - confirmed via rendered HTML |
 
-**Totals: 2 issues fixed directly (role/aria-modal pairing, and focus-visible states across 19 elements - counted as one fix category each per the summary rows above, or 20 individual element-level edits if counted per-element), 4 issues filed for the Implementor (heading hierarchy, footer signature contrast failure, footer icon tap targets, header icon tap targets).**
+**Totals: 2 issues fixed directly (role/aria-modal pairing, and focus-visible states across 19 elements - counted as one fix category each per the summary rows above, or 20 individual element-level edits if counted per-element), 4 issues filed for the Implementor (heading hierarchy, footer signature contrast failure, footer icon tap targets, header icon tap targets) - all 4 filed issues were subsequently resolved by the Implementor in commit `dbe0932`. Zero open findings from this review as of that commit.**
+
+**Separately, note that a later whole-branch review (`FINAL-SIGNOFF.md`) found that the production `bun run build` output (`dist/`) was silently missing most of the site's CSS, including every `focus-visible:outline-*` rule fixed directly in Section 6 above - a build-pipeline bug (`@playform/inline`/Beasties truncating a CSS chunk shared across pages), unrelated to this review's own method, which only ever checked the `bun run dev` output. That bug was fixed by removing the integration from `astro.config.mjs`; see `STATUS.md` for the corresponding entry. This review's own findings and fixes were correct in source and in `dev` the whole time - the build bug affected whether they survived into the shipped `dist/` output, not whether they were applied correctly to the source.**
 
 ---
 
