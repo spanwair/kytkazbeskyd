@@ -69,8 +69,8 @@ const badges = [
         </p>
 
         <div class="flex flex-wrap items-center justify-center gap-6 font-body text-cream text-sm">
-          <a href={phone.href} class="hover:text-blush transition">{phone.label}</a>
-          <a href={email.href} class="hover:text-blush transition">{email.label}</a>
+          <a href={phone.href} class="hover:text-blush transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream">{phone.label}</a>
+          <a href={email.href} class="hover:text-blush transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream">{email.label}</a>
         </div>
 
         <div class="flex items-center gap-4">
@@ -78,7 +78,7 @@ const badges = [
             href={socialMedia.facebook.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="text-blush hover:text-cream transition"
+            class="text-blush hover:text-cream transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
             aria-label="Facebook Kytka z Beskyd"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -89,7 +89,7 @@ const badges = [
             href={socialMedia.instagram.url}
             target="_blank"
             rel="noopener noreferrer"
-            class="text-blush hover:text-cream transition"
+            class="text-blush hover:text-cream transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream"
             aria-label="Instagram Kytka z Beskyd"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -100,7 +100,7 @@ const badges = [
 
         <p class="font-body text-cream text-sm">
           &copy; {currentYear} {siteName}. Všechna práva vyhraná.
-          <a class="underline hover:text-blush transition" href="/privacy-policy">Zásady ochrany osobních údajů</a>
+          <a class="underline hover:text-blush transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cream" href="/privacy-policy">Zásady ochrany osobních údajů</a>
         </p>
       </div>
     </div>

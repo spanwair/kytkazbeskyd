@@ -22,7 +22,7 @@ const { image, alt, title, subtitle, body, href } = Astro.props as Props;
     <p class="font-body text-ink-body text-sm leading-relaxed flex-1">{body}</p>
     <a
       href={href}
-      class="mt-2 inline-flex items-center gap-2 text-accent-pink-deep font-body text-sm uppercase tracking-[0.1em] w-max"
+      class="mt-2 inline-flex items-center gap-2 text-accent-pink-deep font-body text-sm uppercase tracking-[0.1em] w-max focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-pink-deep"
       aria-label={`Zobrazit více: ${title}`}
     >
       Zobrazit více
