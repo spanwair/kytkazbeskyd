@@ -1164,40 +1164,6 @@
       "confidence": 0.98
     },
     {
-      "filename": "e65948e4-259b-4d0a-ab11-3febe5d7f817 (1).jpeg",
-      "path": "/flowers/e65948e4-259b-4d0a-ab11-3febe5d7f817 (1).jpeg",
-      "md5": "31413de3ad195b37501364e1c82ea8ee",
-      "width": 1472,
-      "height": 1600,
-      "orientation": "portrait",
-      "duplicate_of": null,
-      "description_cs": "Jedná se o detailní snímek sušeného květinového věnce, který je tvořen hnědými a zlatými travinami a ozdoben malými modrými květy. Věnec je umístěn na světlejší, texturované pozadí, což zdůrazňuje jeho rustikální a přírodní vzhled.",
-      "alt_text_cs": "Sušený květinový věnec z travin a modrých květů na světlejším pozadí.",
-      "flower_types": [
-        "suché travy",
-        "lavandule"
-      ],
-      "dominant_colors": [
-        "beige",
-        "blue",
-        "green",
-        "off-white"
-      ],
-      "category": "sušené květiny a věnce",
-      "suggested_slot_ids": [
-        "category_susene"
-      ],
-      "style_tags": [
-        "rustic",
-        "dried",
-        "earthy",
-        "natural"
-      ],
-      "setting": "indoor",
-      "contains_people": false,
-      "confidence": 1.0
-    },
-    {
       "filename": "e65948e4-259b-4d0a-ab11-3febe5d7f817.jpeg",
       "path": "/flowers/e65948e4-259b-4d0a-ab11-3febe5d7f817.jpeg",
       "md5": "31413de3ad195b37501364e1c82ea8ee",
