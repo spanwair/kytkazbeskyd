@@ -2,9 +2,40 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
+	/* --- Typography -------------------------------------------------------
+	   All three families are self-hosted under /public/fonts (no remote calls).
+	   See docs/redesign/design-system.md for the sampling/justification. */
 	--font-inter: "Inter", "sans-serif";
-	--color-brand-green: #157f71;
-	--color-brand-red: #db1d00;
+	/* Display serif: wide-tracked caps ("KYTKA Z BESKYD"), section headings. */
+	--font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+	/* Text serif: body copy, nav labels, card copy, buttons. */
+	--font-body: "Lora", Georgia, "Times New Roman", serif;
+	/* Script: logo wordmark, hero tagline, "O mně", footer signature. */
+	--font-script: "Sacramento", "Segoe Script", cursive;
+
+	/* --- Surfaces (sampled from the design mockup) ------------------------- */
+	--color-cream: #f7f1eb; /* page background: header, hero, about band */
+	--color-cream-alt: #fbf6f1; /* alt section background: category grid, portfolio */
+	--color-cream-card: #f5ece2; /* category card body */
+	--color-blush: #f7eae4; /* footer feature-badge band */
+	--color-footer-dark: #474a2b; /* footer contact bar (dark olive, not black) */
+
+	/* --- Ink --------------------------------------------------------------- */
+	--color-ink-green: #45472a; /* H1, headings, nav, dark buttons */
+	--color-ink-body: #423c36; /* body copy, card copy */
+
+	/* --- Accent ------------------------------------------------------------ */
+	--color-accent-pink: #c56885; /* mockup pink: fills, underline, decoration */
+	--color-accent-pink-deep: #aa4a65; /* AA-safe pink: white-on-pink & pink-on-cream text */
+	--color-accent-pink-soft: #d899a2; /* decorative only: card arrows, heart outlines */
+
+	/* --- Legacy aliases ----------------------------------------------------
+	   The restaurant-template names are still consumed by out-of-scope pages
+	   and components (Badge, Menu, Header, 404, gallery, book, contact...).
+	   The NAMES are kept, the VALUES are re-pointed at the flower palette, so
+	   the whole site inherits the new brand without touching those files. */
+	--color-brand-green: var(--color-ink-green);
+	--color-brand-red: var(--color-accent-pink-deep);
 }
 
 @utility container {
@@ -313,6 +344,71 @@ label {
 	font-style: italic;
 	font-weight: 900;
 	src: url("/fonts/inter/inter-v18-latin-900italic.woff2") format("woff2");
+}
+/* inter - latin-ext (variable) - the 12 files above are the "latin" subset only,
+   which has NO Czech caron/ring glyphs (č ě ř š ů ž ...). Without these two
+   faces every Czech word in Inter falls back mid-word to a system font. */
+@font-face {
+	font-display: swap;
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 100 900;
+	src: url("/fonts/inter/inter-v20-latin-ext-variable.woff2") format("woff2");
+	unicode-range: U+0100-017F, U+0192, U+01FA-01FF, U+0218-021B;
+}
+/* inter-italic - latin-ext (variable) */
+@font-face {
+	font-display: swap;
+	font-family: "Inter";
+	font-style: italic;
+	font-weight: 100 900;
+	src: url("/fonts/inter/inter-v20-latin-ext-italic-variable.woff2") format("woff2");
+	unicode-range: U+0100-017F, U+0192, U+01FA-01FF, U+0218-021B;
+}
+
+/* --- Flower-shop brand fonts (latin + latin-ext, incl. full Czech) ---------
+   Subset and self-hosted from the upstream Google Fonts sources, SIL OFL 1.1.
+   Same pattern as Inter above: one weight-specific .woff2, font-display: swap. */
+
+/* cormorant-garamond-600 - latin, latin-ext */
+@font-face {
+	font-display: swap;
+	font-family: "Cormorant Garamond";
+	font-style: normal;
+	font-weight: 600;
+	src: url("/fonts/cormorant-garamond/cormorant-garamond-latin-ext-600.woff2") format("woff2");
+}
+/* cormorant-garamond-700 - latin, latin-ext */
+@font-face {
+	font-display: swap;
+	font-family: "Cormorant Garamond";
+	font-style: normal;
+	font-weight: 700;
+	src: url("/fonts/cormorant-garamond/cormorant-garamond-latin-ext-700.woff2") format("woff2");
+}
+/* lora-regular - latin, latin-ext */
+@font-face {
+	font-display: swap;
+	font-family: "Lora";
+	font-style: normal;
+	font-weight: 400;
+	src: url("/fonts/lora/lora-latin-ext-400.woff2") format("woff2");
+}
+/* lora-600 - latin, latin-ext */
+@font-face {
+	font-display: swap;
+	font-family: "Lora";
+	font-style: normal;
+	font-weight: 600;
+	src: url("/fonts/lora/lora-latin-ext-600.woff2") format("woff2");
+}
+/* sacramento-regular - latin, latin-ext */
+@font-face {
+	font-display: swap;
+	font-family: "Sacramento";
+	font-style: normal;
+	font-weight: 400;
+	src: url("/fonts/sacramento/sacramento-latin-ext-400.woff2") format("woff2");
 }
 
 .loader {
