@@ -158,6 +158,22 @@ Anchor IDs to create in `src/pages/index.astro` (Task 4): `kytice`, `vence-a-dek
 
 ---
 
+## 4. Alt-text corrections (catalog typos)
+
+**Addendum added by Task 4 (Implementor)**, not part of the original Task 1 deliverable - added after an independent Task 4 code review flagged that three `alt` strings used in the portfolio gallery silently diverged from `public/flowers-catalog.json`'s `alt_text_cs` field without being documented, unlike the two mockup typo corrections in Section 1 above, which followed the plan's established pattern. This section brings those three corrections into the same documented pattern.
+
+`flowers-catalog.json`'s `alt_text_cs` values are AI-generated (by the Gemma vision model, per the catalog's own `model` metadata block - see `disclaimers.md` for the general caveat on AI-generated catalog content) and contain three small Czech-language errors. The corrected versions below were used in `src/pages/index.astro`'s portfolio gallery instead of the raw catalog strings, the same way the plan's own two verbatim-copy typo corrections (Section 1: "inspiravané"→"inspirované", the stray period in card 6) were handled - keep the corrected text, document the change, don't silently ship a typo just because it came from the catalog.
+
+| Filename | Catalog `alt_text_cs` (original) | Used in `index.astro` (corrected) | Reason |
+|---|---|---|---|
+| `18ef0981-1389-43a7-b918-2546a229fa74.jpeg` | `Rustikální sušený květinový věnec s muchornicemi a osusíchlým listím.` | `Rustikální sušený květinový věnec s muchornicemi a osušeným listím.` | `osusíchlým` is not a Czech word (garbled AI output); `osušeným` ("dried out") is the plausible intended word and reads correctly. |
+| `7f8f3457-17db-4f52-bf2e-1e5493235670.jpeg` | `Oranžové a modré korsáže na kamenné ploše pro svatební doplnky.` | `Oranžové a modré korsáže na kamenné ploše pro svatební doplňky.` | `doplnky` is missing its háček; `doplňky` ("accessories") is the correctly spelled word. |
+| `74d78256-be34-4ad7-8b51-a3d8cc7f31ba.jpeg` | `Rustikový věnec z purpurové a modré květiny a zeleně.` | `Rustikální věnec z purpurové a modré květiny a zeleně.` | `Rustikový` is not standard Czech; `Rustikální` ("rustic") is the correct adjective and matches every other alt string in the catalog that uses the same rustic-style descriptor. |
+
+No other `alt_text_cs` string used on the homepage was altered - every other alt attribute in `index.astro` is copied character-for-character from the catalog.
+
+---
+
 ## Verification
 
 Re-read the mockup image directly (`public/4225e624-95c5-49f9-8f9f-478c8345f397.png`) and compared every string above against it character-for-character, including diacritics. All strings match Section 1 above exactly, including both documented typo corrections. Nav labels (8 items + cart icon + Instagram icon) confirmed in the exact left-to-right order listed in Section 2.
