@@ -86,57 +86,69 @@ const portfolio = [
 
 <Layout title="Kytka z Beskyd" pageTitle="Kytka z Beskyd" description="Kytka z Beskyd - květiny tvořené srdcem, inspirované přírodou.">
 	<!-- Hero -->
-	<Section id="hero" class:list="bg-cream">
-		<Hero>
-			<div slot="hero-content-left" class="max-lg:order-1">
-				<h1 class="font-display font-bold text-ink-green tracking-[0.08em] uppercase leading-none">
-					KYTKA<br />Z BESKYD
-				</h1>
+	<Section id="hero" class:list="relative bg-cream overflow-hidden" contain={false}>
+		<img
+			src="/flowers/157b55da-b44f-4e52-ae33-42be1a7b0df9.jpeg"
+			alt="Velká, svěží kytice s růžovými a bílými květy v rustikálním balení."
+			class="hidden lg:block absolute inset-0 w-full h-full object-cover"
+			loading="eager"
+			fetchpriority="high"
+		/>
+		<div class="hidden lg:block absolute inset-0 bg-gradient-to-r from-cream from-15% via-cream/85 via-40% to-transparent to-75%" aria-hidden="true"></div>
 
-				<p class="mt-6 flex items-center gap-3 font-script text-ink-green text-3xl md:text-4xl">
-					Květiny tvořené srdcem, inspirované přírodou.
-					<svg xmlns="http://www.w3.org/2000/svg" class="size-6 shrink-0 text-accent-pink-soft" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path>
-					</svg>
-				</p>
+		<div class="container relative py-16 lg:py-32">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:items-center">
+				<div>
+					<h1 class="font-display font-bold text-ink-green tracking-[0.08em] uppercase leading-none">
+						KYTKA<br />Z BESKYD
+					</h1>
 
-				<ul class="mt-6 flex flex-col gap-y-1 font-body uppercase tracking-[0.1em] text-sm text-ink-green">
-					<li class="flex flex-wrap items-center gap-x-2">
-						<span>Kytice</span><span aria-hidden="true">&middot;</span>
-						<span>Věnce</span><span aria-hidden="true">&middot;</span>
-						<span>Svatby</span>
-					</li>
-					<li class="flex flex-wrap items-center gap-x-2">
-						<span>Dekorace</span><span aria-hidden="true">&middot;</span>
-						<span>Zahrady</span>
-					</li>
-				</ul>
+					<p class="mt-6 flex items-center gap-3 font-script text-ink-green text-3xl md:text-4xl">
+						Květiny tvořené srdcem, inspirované přírodou.
+						<svg xmlns="http://www.w3.org/2000/svg" class="size-6 shrink-0 text-accent-pink-soft" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path>
+						</svg>
+					</p>
 
-				<div class="mt-8 flex flex-wrap items-center gap-4">
-					<a
-						href="/book"
-						class="inline-flex items-center rounded-sm px-4 py-3 text-sm font-body font-semibold uppercase tracking-[0.1em] bg-accent-pink-deep text-white transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-pink-deep"
-					>
-						OBJEDNAT KYTICI
-					</a>
-					<a
-						href="#portfolio"
-						class="inline-flex items-center rounded-sm px-4 py-3 text-sm font-body font-semibold uppercase tracking-[0.1em] border border-ink-green text-ink-green transition hover:bg-ink-green hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink-green"
-					>
-						PROHLÉDNOUT TVORBU
-					</a>
+					<ul class="mt-6 flex flex-col gap-y-1 font-body uppercase tracking-[0.1em] text-sm text-ink-green">
+						<li class="flex flex-wrap items-center gap-x-2">
+							<span>Kytice</span><span aria-hidden="true">&middot;</span>
+							<span>Věnce</span><span aria-hidden="true">&middot;</span>
+							<span>Svatby</span>
+						</li>
+						<li class="flex flex-wrap items-center gap-x-2">
+							<span>Dekorace</span><span aria-hidden="true">&middot;</span>
+							<span>Zahrady</span>
+						</li>
+					</ul>
+
+					<div class="mt-8 flex flex-wrap items-center gap-4">
+						<a
+							href="/book"
+							class="inline-flex items-center rounded-sm px-4 py-3 text-sm font-body font-semibold uppercase tracking-[0.1em] bg-accent-pink-deep text-white transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-pink-deep"
+						>
+							OBJEDNAT KYTICI
+						</a>
+						<a
+							href="#portfolio"
+							class="inline-flex items-center rounded-sm px-4 py-3 text-sm font-body font-semibold uppercase tracking-[0.1em] border border-ink-green text-ink-green transition hover:bg-ink-green hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink-green"
+						>
+							PROHLÉDNOUT TVORBU
+						</a>
+					</div>
+				</div>
+
+				<div class="lg:hidden">
+					<img
+						src="/flowers/157b55da-b44f-4e52-ae33-42be1a7b0df9.jpeg"
+						alt="Velká, svěží kytice s růžovými a bílými květy v rustikálním balení."
+						class="w-full h-full object-cover rounded-sm"
+						loading="eager"
+						fetchpriority="high"
+					/>
 				</div>
 			</div>
-			<div slot="hero-content-right">
-				<img
-					src="/flowers/157b55da-b44f-4e52-ae33-42be1a7b0df9.jpeg"
-					alt="Velká, svěží kytice s růžovými a bílými květy v rustikálním balení."
-					class="w-full h-full object-cover rounded-sm"
-					loading="eager"
-					fetchpriority="high"
-				/>
-			</div>
-		</Hero>
+		</div>
 	</Section>
 
 	<!-- Category grid -->

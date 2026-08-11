@@ -59,9 +59,15 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
       </div>
 
       <div class="hidden lg:flex items-center gap-2 shrink-0">
-        <a href="/book" class="p-2 text-ink-green hover:text-accent-pink-deep transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink-green" aria-label="Objednávka a košík">
-          <svg xmlns="http://www.w3.org/2000/svg" class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m-3 8.25h13.5A2.25 2.25 0 0 0 21 16.5v-6.75a1.5 1.5 0 0 0-1.5-1.5H4.5A1.5 1.5 0 0 0 3 9.75v6.75a2.25 2.25 0 0 0 2.25 2.25Z"></path>
+        <a
+          href={socialMedia.facebook.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="p-2 text-ink-green hover:text-accent-pink-deep transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink-green"
+          aria-label="Facebook Kytka z Beskyd"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path>
           </svg>
         </a>
         <a
@@ -128,9 +134,15 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
               }
             </div>
             <div class="flex items-center justify-center gap-6 py-6">
-              <a href="/book" class="p-2 text-ink-green focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink-green" aria-label="Objednávka a košík" @click="open = false">
-                <svg xmlns="http://www.w3.org/2000/svg" class="size-7" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m-3 8.25h13.5A2.25 2.25 0 0 0 21 16.5v-6.75a1.5 1.5 0 0 0-1.5-1.5H4.5A1.5 1.5 0 0 0 3 9.75v6.75a2.25 2.25 0 0 0 2.25 2.25Z"></path>
+              <a
+                href={socialMedia.facebook.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="p-2 text-ink-green focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink-green"
+                aria-label="Facebook Kytka z Beskyd"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"></path>
                 </svg>
               </a>
               <a
