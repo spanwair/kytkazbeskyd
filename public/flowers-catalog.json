@@ -152,15 +152,15 @@
     "category_susene": [
       {
         "filename": "70716e83-e783-46dc-b101-cf77095b8bf1.jpeg",
-        "confidence": 1.0
+        "confidence": 1
       },
       {
         "filename": "e65948e4-259b-4d0a-ab11-3febe5d7f817 (1).jpeg",
-        "confidence": 1.0
+        "confidence": 1
       },
       {
         "filename": "e65948e4-259b-4d0a-ab11-3febe5d7f817.jpeg",
-        "confidence": 1.0
+        "confidence": 1
       },
       {
         "filename": "18ef0981-1389-43a7-b918-2546a229fa74.jpeg",
@@ -374,30 +374,11 @@
       "duplicate_of": null,
       "description_cs": "Velká, živá kytice čerstvých květin je držena před rozmazaným zeleným pozadím. Kompozice je bohatá a rustikální, s množstvím růžových, bílých a zelených květin, obalenzých v hnědé papírové obálce. Fotografie evokuje pocit přírodní plnosti a svěžesti.",
       "alt_text_cs": "Velká, svěží kytice s růžovými a bílými květy v rustikálním balení.",
-      "flower_types": [
-        "růže",
-        "astry",
-        "zelené listy"
-      ],
-      "dominant_colors": [
-        "pink",
-        "green",
-        "white",
-        "brown"
-      ],
+      "flower_types": ["růže", "astry", "zelené listy"],
+      "dominant_colors": ["pink", "green", "white", "brown"],
       "category": "kytice - kytice z cerstvych kvetin",
-      "suggested_slot_ids": [
-        "hero",
-        "category_kytice",
-        "portfolio_main"
-      ],
-      "style_tags": [
-        "rustic",
-        "abundant",
-        "fresh",
-        "seasonal",
-        "natural"
-      ],
+      "suggested_slot_ids": ["hero", "category_kytice", "portfolio_main"],
+      "style_tags": ["rustic", "abundant", "fresh", "seasonal", "natural"],
       "setting": "outdoor",
       "contains_people": true,
       "confidence": 0.95
@@ -412,27 +393,11 @@
       "duplicate_of": null,
       "description_cs": "Na rustikální dřevěné podložce je umístěna malá, jemná květinová kompozice. Hlavním prvkem je bílá růže doplněná malými modrými květy. Kompozice je zřetelně fotografována v přírodním, romantickém prostředí.",
       "alt_text_cs": "Jemný květinový korsáž z bílé růže a modrých květů na dřevě.",
-      "flower_types": [
-        "růže",
-        "malé modré květy"
-      ],
-      "dominant_colors": [
-        "white",
-        "light blue",
-        "green",
-        "brown"
-      ],
+      "flower_types": ["růže", "malé modré květy"],
+      "dominant_colors": ["white", "light blue", "green", "brown"],
       "category": "doplnky - korsaze/ozdoby do vlasu",
-      "suggested_slot_ids": [
-        "category_doplnky",
-        "portfolio_gallery_1"
-      ],
-      "style_tags": [
-        "romantic",
-        "delicate",
-        "rustic",
-        "elegant"
-      ],
+      "suggested_slot_ids": ["category_doplnky", "portfolio_gallery_1"],
+      "style_tags": ["romantic", "delicate", "rustic", "elegant"],
       "setting": "outdoor",
       "contains_people": false,
       "confidence": 0.98
@@ -447,68 +412,18 @@
       "duplicate_of": null,
       "description_cs": "Na fotografii je detailní, rustikální květinový věnec. Je složen z osusíchlých květin, muchornic a bohatého, texturovaného listí v hnědo-oranžových tónech. Celkový dojem je hřejivý, přírodní a velmi podzimní.",
       "alt_text_cs": "Rustikální sušený květinový věnec s muchornicemi a osusíchlým listím.",
-      "flower_types": [
-        "osusíklé květy",
-        "muchornice",
-        "listí"
-      ],
-      "dominant_colors": [
-        "brown",
-        "rust",
-        "gold",
-        "deep red"
-      ],
+      "flower_types": ["osusíklé květy", "muchornice", "listí"],
+      "dominant_colors": ["brown", "rust", "gold", "deep red"],
       "category": "sušené květiny a věnce",
       "suggested_slot_ids": [
         "category_susene",
         "portfolio_main",
         "portfolio_gallery_1"
       ],
-      "style_tags": [
-        "rustic",
-        "autumnal",
-        "dried",
-        "bohemian"
-      ],
+      "style_tags": ["rustic", "autumnal", "dried", "bohemian"],
       "setting": "indoor",
       "contains_people": false,
       "confidence": 0.98
-    },
-    {
-      "filename": "32c2b87a-57d6-486a-ae75-4c2a01ac1ec8.jpeg",
-      "path": "/flowers/32c2b87a-57d6-486a-ae75-4c2a01ac1ec8.jpeg",
-      "md5": "0357305798172c5f1904a66653643f85",
-      "width": 610,
-      "height": 1356,
-      "orientation": "portrait",
-      "duplicate_of": null,
-      "description_cs": "Fotografie je kolaž, který prezentuje různé aspekty florálního řemesla Kytky z Beskyd. Zobrazeny jsou bukety čerstvých květin, sušené aranžmá a elegantní svatební floristika s modelkou. Celkový styl je rustikální a romantický, zdůrazňující přírodní krásu květin.",
-      "alt_text_cs": "Kolaž s květinami: sušené věnce, buket a svatební floristika.",
-      "flower_types": [
-        "různé květiny",
-        "sušené byliny"
-      ],
-      "dominant_colors": [
-        "white",
-        "green",
-        "beige",
-        "cream"
-      ],
-      "category": "galerie tvorby",
-      "suggested_slot_ids": [
-        "category_susene",
-        "category_svatebni",
-        "portfolio_main"
-      ],
-      "style_tags": [
-        "rustic",
-        "romantic",
-        "natural",
-        "elegant"
-      ],
-      "setting": "indoor",
-      "contains_people": true,
-      "confidence": 0.95
     },
     {
       "filename": "33ae30c1-e12a-4e36-9abb-89d96e2c0602.jpeg",
@@ -520,30 +435,15 @@
       "duplicate_of": null,
       "description_cs": "Na rustikálním dřevěném povrchu je umístěna jemná, přírodní kompozice. Obsahuje svěží, zelené listí a suché, zlatavé kvíty nebo trávy. Celý náhled evokuje rustikální a přírodní atmosféru, ideální pro portfolio.",
       "alt_text_cs": "Rustikální dekorace z zeleného listí a suchých, zlatých trav na dřevě.",
-      "flower_types": [
-        "listí",
-        "suché kvíty",
-        "tráva"
-      ],
-      "dominant_colors": [
-        "green",
-        "beige",
-        "brown",
-        "cream"
-      ],
+      "flower_types": ["listí", "suché kvíty", "tráva"],
+      "dominant_colors": ["green", "beige", "brown", "cream"],
       "category": "sušené květiny a věnce",
       "suggested_slot_ids": [
         "portfolio_main",
         "category_susene",
         "portfolio_gallery_1"
       ],
-      "style_tags": [
-        "rustic",
-        "natural",
-        "earthy",
-        "dried",
-        "minimalist"
-      ],
+      "style_tags": ["rustic", "natural", "earthy", "dried", "minimalist"],
       "setting": "indoor",
       "contains_people": false,
       "confidence": 0.95
@@ -558,30 +458,15 @@
       "duplicate_of": null,
       "description_cs": "Ukazáno je rustikální a romantické sušené květinové okrasy, které jsou drženy v hnědé papírové obálce. Kompozice je bohatá na sušené květy a zelené prvky, s akcenty světle růžové a modré, což vytváří přírodní a národní vzhled. Kytice je prezentována v ruce, což zdůrazňuje její ruční výrobu.",
       "alt_text_cs": "Rustikální sušená květinová kytice v hnědé obálce s sušenými květy.",
-      "flower_types": [
-        "sušené květy",
-        "eřingyum",
-        "sušená trava"
-      ],
-      "dominant_colors": [
-        "brown",
-        "muted blue",
-        "cream",
-        "pink"
-      ],
+      "flower_types": ["sušené květy", "eřingyum", "sušená trava"],
+      "dominant_colors": ["brown", "muted blue", "cream", "pink"],
       "category": "sušené květiny a věnce",
       "suggested_slot_ids": [
         "category_susene",
         "portfolio_gallery_1",
         "portfolio_gallery_2"
       ],
-      "style_tags": [
-        "rustic",
-        "wildflower",
-        "natural",
-        "dried",
-        "seasonal"
-      ],
+      "style_tags": ["rustic", "wildflower", "natural", "dried", "seasonal"],
       "setting": "indoor",
       "contains_people": false,
       "confidence": 0.98
@@ -596,28 +481,15 @@
       "duplicate_of": null,
       "description_cs": "Na fotografii je detailní, bohatě sbíraný a rustikální květinový okras, který je obalen v hnědé papírové obálce. Okras je tvořen intenzivně barevnými, kompaktními květy v odstínech fialové, růžové a červené, doplněnými zeleným listím. Celkový dojem je velmi přírodní a romantický.",
       "alt_text_cs": "Rustikální květinový okras s bohatými růžovými a červenými květy.",
-      "flower_types": [
-        "míchané květy",
-        "zelenina"
-      ],
-      "dominant_colors": [
-        "pink",
-        "red",
-        "green",
-        "cream"
-      ],
+      "flower_types": ["míchané květy", "zelenina"],
+      "dominant_colors": ["pink", "red", "green", "cream"],
       "category": "kytice - kytice z cerstvych kvetin",
       "suggested_slot_ids": [
         "category_kytice",
         "category_rezane",
         "portfolio_gallery_1"
       ],
-      "style_tags": [
-        "rustic",
-        "wildflower",
-        "romantic",
-        "seasonal"
-      ],
+      "style_tags": ["rustic", "wildflower", "romantic", "seasonal"],
       "setting": "indoor",
       "contains_people": false,
       "confidence": 0.95
@@ -632,28 +504,11 @@
       "duplicate_of": null,
       "description_cs": "Rustikální a divoké aranžmá z sušených květin a trávy je prezentováno v skleněné nádobě. Aranžmá je bohaté na modrou a fialovou barvu a působí velmi přírodním a melancholickým dojmem. Část ruky je viditelná, což dodává fotografii osobní, uměleckou atmosféru.",
       "alt_text_cs": "Rustikální aranžmá z sušených modrých květin a trávy.",
-      "flower_types": [
-        "suché květy",
-        "tráva",
-        "listí"
-      ],
-      "dominant_colors": [
-        "blue",
-        "purple",
-        "green",
-        "beige"
-      ],
+      "flower_types": ["suché květy", "tráva", "listí"],
+      "dominant_colors": ["blue", "purple", "green", "beige"],
       "category": "sušené květiny a věnce",
-      "suggested_slot_ids": [
-        "category_susene",
-        "portfolio_gallery_1"
-      ],
-      "style_tags": [
-        "rustic",
-        "dried",
-        "wildflower",
-        "natural"
-      ],
+      "suggested_slot_ids": ["category_susene", "portfolio_gallery_1"],
+      "style_tags": ["rustic", "dried", "wildflower", "natural"],
       "setting": "indoor",
       "contains_people": true,
       "confidence": 0.95
@@ -668,27 +523,15 @@
       "duplicate_of": null,
       "description_cs": "Fotografie ukazuje rustikální a svěží květinový dárek, zabalený v hnědé papírové obálce. Buket je tvořen převážně malými bílými květy a bohatou zelenou listovou zelení. Kompozice je minimalistická a zdůrazňuje přírodní krásu a svěžest.",
       "alt_text_cs": "Rustikální květinový dárek s bílými květy a zeleným listím.",
-      "flower_types": [
-        "Gypsophila",
-        "zelené listí"
-      ],
-      "dominant_colors": [
-        "white",
-        "green",
-        "brown"
-      ],
+      "flower_types": ["Gypsophila", "zelené listí"],
+      "dominant_colors": ["white", "green", "brown"],
       "category": "kytice - kytice z cerstvych kvetin",
       "suggested_slot_ids": [
         "category_kytice",
         "portfolio_gallery_1",
         "category_rezane"
       ],
-      "style_tags": [
-        "rustic",
-        "natural",
-        "fresh",
-        "minimalist"
-      ],
+      "style_tags": ["rustic", "natural", "fresh", "minimalist"],
       "setting": "indoor",
       "contains_people": false,
       "confidence": 0.95
@@ -703,29 +546,15 @@
       "duplicate_of": null,
       "description_cs": "Velký, rustikový květinový věnec, bohatě zdobený sušenými květy, bylinkami a bobulami. Kompozice je velmi přírodní a volná, s důrazem na bohatost, texturu a barevnou hloubku. Věnec je prezentován na neutrálném, světlém pozadí, což zdůrazňuje jeho přírodní krásu.",
       "alt_text_cs": "Bohatý rustikový věnec z sušených květin a bylinek.",
-      "flower_types": [
-        "sušené květy",
-        "bobulky",
-        "zelenina"
-      ],
-      "dominant_colors": [
-        "green",
-        "gold",
-        "red",
-        "cream"
-      ],
+      "flower_types": ["sušené květy", "bobulky", "zelenina"],
+      "dominant_colors": ["green", "gold", "red", "cream"],
       "category": "sušené květiny a věnce",
       "suggested_slot_ids": [
         "category_susene",
         "portfolio_main",
         "portfolio_gallery_1"
       ],
-      "style_tags": [
-        "rustic",
-        "wildflower",
-        "autumnal",
-        "bohemian"
-      ],
+      "style_tags": ["rustic", "wildflower", "autumnal", "bohemian"],
       "setting": "indoor",
       "contains_people": false,
       "confidence": 0.98
@@ -740,31 +569,14 @@
       "duplicate_of": null,
       "description_cs": "Velký, rustikální květinový věnec vyrobený z suchých trav, jemných korun a drobných, uchovaných květin. Je prezentován na světlejší, neutrální pozadí, což zdůrazňuje jeho zemité textury a tichou, muted barevnou paletu.",
       "alt_text_cs": "Sušený květinový věnec z hnědých a zlatých suchých rostlin.",
-      "flower_types": [
-        "suché rostliny",
-        "travy",
-        "drobné květy"
-      ],
-      "dominant_colors": [
-        "brown",
-        "beige",
-        "muted green",
-        "dusty pink"
-      ],
+      "flower_types": ["suché rostliny", "travy", "drobné květy"],
+      "dominant_colors": ["brown", "beige", "muted green", "dusty pink"],
       "category": "sušené květiny a věnce",
-      "suggested_slot_ids": [
-        "category_susene"
-      ],
-      "style_tags": [
-        "rustic",
-        "dried",
-        "earthy",
-        "bohemian",
-        "natural"
-      ],
+      "suggested_slot_ids": ["category_susene"],
+      "style_tags": ["rustic", "dried", "earthy", "bohemian", "natural"],
       "setting": "indoor",
       "contains_people": false,
-      "confidence": 1.0
+      "confidence": 1
     },
     {
       "filename": "70fc2c30-4ece-4fc0-976a-12abd5a480b3.jpeg",
@@ -776,29 +588,11 @@
       "duplicate_of": null,
       "description_cs": "Na fotografii je detailní záběr na sušený květinový věnec, který je umístěn na neutrálném, světle šedém pozadí. Věnec je složen z různých suchých trav, drobného listí a zčernalých, purpurováky a hnědých květin. Kompozice je minimalistická a zdůrazňuje rustikální a přírodní krásu materiálu.",
       "alt_text_cs": "Sušený květinový věnec s purpurovými a hnědými tóny na neutrálném pozadí.",
-      "flower_types": [
-        "suché květy",
-        "tráva",
-        "plody"
-      ],
-      "dominant_colors": [
-        "purple",
-        "brown",
-        "cream",
-        "green"
-      ],
+      "flower_types": ["suché květy", "tráva", "plody"],
+      "dominant_colors": ["purple", "brown", "cream", "green"],
       "category": "sušené květiny a věnce",
-      "suggested_slot_ids": [
-        "category_susene",
-        "portfolio_gallery_1"
-      ],
-      "style_tags": [
-        "rustic",
-        "bohemian",
-        "dried",
-        "earthy",
-        "muted"
-      ],
+      "suggested_slot_ids": ["category_susene", "portfolio_gallery_1"],
+      "style_tags": ["rustic", "bohemian", "dried", "earthy", "muted"],
       "setting": "studio",
       "contains_people": false,
       "confidence": 0.98
@@ -813,17 +607,8 @@
       "duplicate_of": null,
       "description_cs": "Velký, rustikový věnec vyrobený z množstva květin a zeleně. Je hustě zdoben hlubokopurpurovémi a modrými květy, doplněnými světlou listovou zelení. Věnec je prezentován na jednoduché, světlé stěně.",
       "alt_text_cs": "Rustikový věnec z purpurové a modré květiny a zeleně.",
-      "flower_types": [
-        "lavendule",
-        "zelenina",
-        "malva"
-      ],
-      "dominant_colors": [
-        "purple",
-        "blue",
-        "green",
-        "cream"
-      ],
+      "flower_types": ["lavendule", "zelenina", "malva"],
+      "dominant_colors": ["purple", "blue", "green", "cream"],
       "category": "sušené květiny a věnce",
       "suggested_slot_ids": [
         "category_susene",
@@ -851,27 +636,11 @@
       "duplicate_of": null,
       "description_cs": "Na fotografii jsou zobrazeny dva výrazné florální doplnky, pravděpodobně korsáže, umístěné na hrubé, šedé povrchové ploše. Hlavní prvky tvoří velké, jasně oranžové slunečnice, doplněné modro-bílými akcenty. Kompozice je rustikální a zdůrazňuje veselé, letní barvy.",
       "alt_text_cs": "Oranžové a modré korsáže na kamenné ploše pro svatební doplnky.",
-      "flower_types": [
-        "slunečnice",
-        "modré akcenty"
-      ],
-      "dominant_colors": [
-        "orange",
-        "blue",
-        "yellow",
-        "brown"
-      ],
+      "flower_types": ["slunečnice", "modré akcenty"],
+      "dominant_colors": ["orange", "blue", "yellow", "brown"],
       "category": "doplnky - korsaze/ozdoby do vlasu",
-      "suggested_slot_ids": [
-        "category_doplnky",
-        "portfolio_gallery_1"
-      ],
-      "style_tags": [
-        "rustic",
-        "vibrant",
-        "summery",
-        "celebratory"
-      ],
+      "suggested_slot_ids": ["category_doplnky", "portfolio_gallery_1"],
+      "style_tags": ["rustic", "vibrant", "summery", "celebratory"],
       "setting": "outdoor",
       "contains_people": false,
       "confidence": 0.98
@@ -886,29 +655,15 @@
       "duplicate_of": null,
       "description_cs": "Fotografie ukazuje bohatý, rustikální květinový okras. Buket je tvořen hnědo-modrými a zlatými květy a suchými prvkami, které vytvářejí volný, divoký vzhled. Je fotografován v přírodním, venkovním prostředí.",
       "alt_text_cs": "Rustikální buket s modrými a zlatými květy v přírodním prostředí.",
-      "flower_types": [
-        "lavanta",
-        "suché květy",
-        "slunečnicové květy"
-      ],
-      "dominant_colors": [
-        "purple",
-        "gold",
-        "green",
-        "brown"
-      ],
+      "flower_types": ["lavanta", "suché květy", "slunečnicové květy"],
+      "dominant_colors": ["purple", "gold", "green", "brown"],
       "category": "sušené květiny a věnce",
       "suggested_slot_ids": [
         "portfolio_main",
         "category_kytice",
         "portfolio_gallery_1"
       ],
-      "style_tags": [
-        "rustic",
-        "wildflower",
-        "natural",
-        "bohemian"
-      ],
+      "style_tags": ["rustic", "wildflower", "natural", "bohemian"],
       "setting": "outdoor",
       "contains_people": false,
       "confidence": 0.95
@@ -923,28 +678,11 @@
       "duplicate_of": null,
       "description_cs": "Velký, bohatý a romantický květinový okras, složený z mnoha růžových, fialových a bílých květin. Buket je prezentován v rustikálním stylu, který zdůrazňuje svěžest a plnost květin. Kompozice je dynamická a přitažlivá.",
       "alt_text_cs": "Bohatý a romantický květinový buket v rustikálním stylu s růžovými a bílými květy.",
-      "flower_types": [
-        "růže",
-        "mix květin"
-      ],
-      "dominant_colors": [
-        "pink",
-        "magenta",
-        "white",
-        "green"
-      ],
+      "flower_types": ["růže", "mix květin"],
+      "dominant_colors": ["pink", "magenta", "white", "green"],
       "category": "kytice - kytice z cerstvych kvetin",
-      "suggested_slot_ids": [
-        "hero",
-        "portfolio_main",
-        "category_kytice"
-      ],
-      "style_tags": [
-        "romantic",
-        "abundant",
-        "rustic",
-        "fresh"
-      ],
+      "suggested_slot_ids": ["hero", "portfolio_main", "category_kytice"],
+      "style_tags": ["romantic", "abundant", "rustic", "fresh"],
       "setting": "studio",
       "contains_people": false,
       "confidence": 0.98
@@ -958,24 +696,12 @@
       "orientation": "portrait",
       "duplicate_of": null,
       "description_cs": "Fotografie zachycuje paní v krásné svatební šatě a závoji, která se dívá z okna. Scéna je velmi romantická a elegantní, s jemným světlem a detailem svatebního květinového aranžému v dolní části rámu.",
-      "alt_text_cs": "Paní v svatební šatě se dívá z okna, s květinami na okraji.",
+      "alt_text_cs": "Květinový aranžém se svatebními květy",
       "flower_types": [],
-      "dominant_colors": [
-        "white",
-        "ivory",
-        "green"
-      ],
+      "dominant_colors": ["white", "ivory", "green"],
       "category": "svatební floristika",
-      "suggested_slot_ids": [
-        "category_svatebni",
-        "hero"
-      ],
-      "style_tags": [
-        "romantic",
-        "bridal",
-        "elegant",
-        "soft"
-      ],
+      "suggested_slot_ids": ["category_svatebni", "hero"],
+      "style_tags": ["romantic", "bridal", "elegant", "soft"],
       "setting": "indoor",
       "contains_people": true,
       "confidence": 0.98
@@ -990,29 +716,15 @@
       "duplicate_of": null,
       "description_cs": "Krásná, bohatá kytice v skleněné váze, která je dominantní v kompozici. Kytice je složena z velkých, oranžových slunečnic a bílých květních prvků, doplněných zeleným listím. Celé uložení je prezentováno na světlé látce s jemným rozostřeným pozadím.",
       "alt_text_cs": "Bohatá oranžová kytice slunečnic v skleněné váze.",
-      "flower_types": [
-        "slunečnice",
-        "hydrangea",
-        "zelenina"
-      ],
-      "dominant_colors": [
-        "orange",
-        "white",
-        "green",
-        "yellow"
-      ],
+      "flower_types": ["slunečnice", "hydrangea", "zelenina"],
+      "dominant_colors": ["orange", "white", "green", "yellow"],
       "category": "kytice - kytice z cerstvych kvetin",
       "suggested_slot_ids": [
         "category_kytice",
         "category_rezane",
         "portfolio_gallery_1"
       ],
-      "style_tags": [
-        "rustic",
-        "seasonal",
-        "abundant",
-        "cheerful"
-      ],
+      "style_tags": ["rustic", "seasonal", "abundant", "cheerful"],
       "setting": "indoor",
       "contains_people": false,
       "confidence": 0.98
@@ -1027,28 +739,11 @@
       "duplicate_of": null,
       "description_cs": "Na fotografii je detailní, romantický květinový věnec s jemnými, lehce uschlými růžemi a malými bílými květy. Kompozice je bohatá a texturovaná, s jemnými, rozptýlenými květičkami, které vytvářejí vzdušný a vintage vzhled. Věnec je umístěn na tmavé dřevěné podložce.",
       "alt_text_cs": "Romantický věnec z uschlých květin a růží.",
-      "flower_types": [
-        "růže",
-        "gypsophila"
-      ],
-      "dominant_colors": [
-        "pink",
-        "cream",
-        "white",
-        "brown"
-      ],
+      "flower_types": ["růže", "gypsophila"],
+      "dominant_colors": ["pink", "cream", "white", "brown"],
       "category": "sušené květiny a věnce",
-      "suggested_slot_ids": [
-        "category_susene",
-        "portfolio_main"
-      ],
-      "style_tags": [
-        "rustic",
-        "romantic",
-        "preserved",
-        "vintage",
-        "delicate"
-      ],
+      "suggested_slot_ids": ["category_susene", "portfolio_main"],
+      "style_tags": ["rustic", "romantic", "preserved", "vintage", "delicate"],
       "setting": "indoor",
       "contains_people": false,
       "confidence": 0.98
@@ -1063,29 +758,15 @@
       "duplicate_of": null,
       "description_cs": "Rustikový a volný květinový okras v purpurových a růžových odstínech. Ukazuje malou, hustou kompozici sušených květin a plamenů, která je umístěna na zemi s rozmazaným zeleným pozadím. Celkový dojem je velmi přírodní a romantický.",
       "alt_text_cs": "Rustikový květinový okras z sušených květin v purpurových a růžových odstínech.",
-      "flower_types": [
-        "malé květy",
-        "plameny"
-      ],
-      "dominant_colors": [
-        "purple",
-        "pink",
-        "green",
-        "brown"
-      ],
+      "flower_types": ["malé květy", "plameny"],
+      "dominant_colors": ["purple", "pink", "green", "brown"],
       "category": "sušené květiny a věnce",
       "suggested_slot_ids": [
         "portfolio_main",
         "category_susene",
         "category_kytice"
       ],
-      "style_tags": [
-        "rustic",
-        "natural",
-        "wildflower",
-        "romantic",
-        "autumnal"
-      ],
+      "style_tags": ["rustic", "natural", "wildflower", "romantic", "autumnal"],
       "setting": "outdoor",
       "contains_people": false,
       "confidence": 0.95
@@ -1100,29 +781,15 @@
       "duplicate_of": null,
       "description_cs": "Fotografie ukazuje rustikální a jemný buket z suchých květin a trav. Aranžmá je drženo v ruce, a je plné textury, suchých akcentů a rudých, hnědých barev. Pozadí je rozmazané, což zdůrazňuje detail a přírodní krásu samotného okrasu.",
       "alt_text_cs": "Suchý, rustikální květinový okras v buketu s akcenty z rudých trav.",
-      "flower_types": [
-        "suché květy",
-        "suché trávy"
-      ],
-      "dominant_colors": [
-        "beige",
-        "brown",
-        "rust",
-        "green"
-      ],
+      "flower_types": ["suché květy", "suché trávy"],
+      "dominant_colors": ["beige", "brown", "rust", "green"],
       "category": "sušené květiny a věnce",
       "suggested_slot_ids": [
         "portfolio_main",
         "category_susene",
         "portfolio_gallery_1"
       ],
-      "style_tags": [
-        "rustic",
-        "dried",
-        "autumnal",
-        "natural",
-        "bohemian"
-      ],
+      "style_tags": ["rustic", "dried", "autumnal", "natural", "bohemian"],
       "setting": "outdoor",
       "contains_people": true,
       "confidence": 0.98
@@ -1137,28 +804,11 @@
       "duplicate_of": null,
       "description_cs": "Na fotografii je detailní, kruhové květinové věnec rozložený na světlé, texturované ploše. Věnec je tvořen směsí sušených a lehce zbarvených květin a zeleně, což vytváří rustikální a romantický vzhled. Kompozice je velmi jemná a přírodní.",
       "alt_text_cs": "Rustikální sušený květinový věnec na světlé ploše.",
-      "flower_types": [
-        "sušené bylinky",
-        "malé polní květiny"
-      ],
-      "dominant_colors": [
-        "green",
-        "purple",
-        "pink",
-        "cream"
-      ],
+      "flower_types": ["sušené bylinky", "malé polní květiny"],
+      "dominant_colors": ["green", "purple", "pink", "cream"],
       "category": "sušené květiny a věnce",
-      "suggested_slot_ids": [
-        "category_susene",
-        "portfolio_main"
-      ],
-      "style_tags": [
-        "rustic",
-        "dried",
-        "natural",
-        "bohemian",
-        "delicate"
-      ],
+      "suggested_slot_ids": ["category_susene", "portfolio_main"],
+      "style_tags": ["rustic", "dried", "natural", "bohemian", "delicate"],
       "setting": "outdoor",
       "contains_people": false,
       "confidence": 0.98
@@ -1173,29 +823,14 @@
       "duplicate_of": "e65948e4-259b-4d0a-ab11-3febe5d7f817 (1).jpeg",
       "description_cs": "Jedná se o detailní snímek sušeného květinového věnce, který je tvořen hnědými a zlatými travinami a ozdoben malými modrými květy. Věnec je umístěn na světlejší, texturované pozadí, což zdůrazňuje jeho rustikální a přírodní vzhled.",
       "alt_text_cs": "Sušený květinový věnec z travin a modrých květů na světlejším pozadí.",
-      "flower_types": [
-        "suché travy",
-        "lavandule"
-      ],
-      "dominant_colors": [
-        "beige",
-        "blue",
-        "green",
-        "off-white"
-      ],
+      "flower_types": ["suché travy", "lavandule"],
+      "dominant_colors": ["beige", "blue", "green", "off-white"],
       "category": "sušené květiny a věnce",
-      "suggested_slot_ids": [
-        "category_susene"
-      ],
-      "style_tags": [
-        "rustic",
-        "dried",
-        "earthy",
-        "natural"
-      ],
+      "suggested_slot_ids": ["category_susene"],
+      "style_tags": ["rustic", "dried", "earthy", "natural"],
       "setting": "indoor",
       "contains_people": false,
-      "confidence": 1.0
+      "confidence": 1
     }
   ]
 }

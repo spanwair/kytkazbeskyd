@@ -1,8 +1,91 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 import Section from "~/components/Section.astro";
-import { galleryCategories, galleryItems, type GalleryCategory } from "~/data/gallery";
 import { socialMedia } from "~/data/config";
+import catalog from "../../public/flowers-catalog.json";
+
+// Page copy for each category, keyed by the site-wide nav/anchor slug
+// (e.g. `#kytice`). The photo list itself is derived below from
+// `public/flowers-catalog.json` (the source of truth for the photos in
+// `public/flowers/`) so the two never drift apart.
+interface GalleryCategory {
+	slug: string;
+	title: string;
+	intro: string;
+}
+
+const galleryCategories: GalleryCategory[] = [
+	{
+		slug: "kytice",
+		title: "Kytice",
+		intro: "Čerstvé, sezónní kytice - pokaždé trochu jiné.",
+	},
+	{
+		slug: "vence-a-dekorace",
+		title: "Sušené květiny a věnce",
+		intro: "Ručně vázané věnce a dekorace, které vydrží.",
+	},
+	{
+		slug: "svatby",
+		title: "Svatební floristika",
+		intro: "Kytice, korsáže a výzdoba pro váš velký den.",
+	},
+	{
+		slug: "zahrady",
+		title: "Zahrady a výsadby",
+		intro: "Návrhy, osazování a péče o zahrady.",
+	},
+	{
+		slug: "doplnky",
+		title: "Doplňky",
+		intro: "Korsáže, ozdoby do vlasů a další drobné detaily.",
+	},
+];
+
+// Maps `flowers-catalog.json` category labels to the site's nav/anchor
+// slugs above. Catalog categories with no entry here (e.g. "galerie
+// tvorby", "portret kvetinarky") don't have a gallery section and are
+// dropped.
+const categorySlugByCatalogCategory: Record<string, string> = {
+	"kytice - kytice z cerstvych kvetin": "kytice",
+	"sušené květiny a věnce": "vence-a-dekorace",
+	"svatební floristika": "svatby",
+	"zahrady a vysadby": "zahrady",
+	"doplnky - korsaze/ozdoby do vlasu": "doplnky",
+};
+
+// A few `alt_text_cs` strings in the catalog contain AI-generated language
+// errors (see docs/redesign/disclaimers.md section (d)); these
+// hand-corrections match what's already shipped on the homepage.
+const altOverrides: Record<string, string> = {
+	"18ef0981-1389-43a7-b918-2546a229fa74.jpeg":
+		"Rustikální sušený květinový věnec s muchornicemi a osušeným listím.",
+	"74d78256-be34-4ad7-8b51-a3d8cc7f31ba.jpeg":
+		"Rustikální věnec z purpurové a modré květiny a zeleně.",
+	"e267356c-9f76-447f-98da-1bc2562535e4.jpeg":
+		"Rustikální květinový okras z sušených květin v purpurových a růžových odstínech.",
+	"7f8f3457-17db-4f52-bf2e-1e5493235670.jpeg":
+		"Oranžové a modré korsáže na kamenné ploše pro svatební doplňky.",
+};
+
+interface GalleryItem {
+	filename: string;
+	alt: string;
+	category: string;
+}
+
+const galleryItems: GalleryItem[] = catalog.images.flatMap((image): GalleryItem[] => {
+	const category = categorySlugByCatalogCategory[image.category];
+	if (!category) return [];
+
+	return [
+		{
+			filename: image.filename,
+			alt: altOverrides[image.filename] ?? image.alt_text_cs,
+			category,
+		},
+	];
+});
 
 const itemsByCategory = (slug: string) => galleryItems.filter((item) => item.category === slug);
 
