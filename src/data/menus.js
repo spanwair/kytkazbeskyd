@@ -6,22 +6,22 @@ export const menuMain = [
   },
   {
     name: "Kytice",
-    url: "/gallery#kytice",
+    url: "/gallery/#kytice",
     highlighted: false,
   },
   {
     name: "Věnce a dekorace",
-    url: "/gallery#vence-a-dekorace",
+    url: "/gallery/#vence-a-dekorace",
     highlighted: false,
   },
   {
     name: "Svatby",
-    url: "/gallery#svatby",
+    url: "/gallery/#svatby",
     highlighted: false,
   },
   {
     name: "Zahrady",
-    url: "/gallery#zahrady",
+    url: "/gallery/#zahrady",
     highlighted: false,
   },
   {
