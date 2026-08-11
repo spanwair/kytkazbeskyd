@@ -2,199 +2,281 @@
 import Layout from "~/layouts/Layout.astro";
 import Section from "~/components/Section.astro";
 import Hero from "~/components/Hero.astro";
-import { Picture } from "astro:assets";
-import Badge from "~/components/Badge.astro";
-import Button from "~/components/Button.astro";
-import ButtonCallUs from "~/components/ButtonCallUs.astro";
-import Grid from "~/components/Grid.astro";
-import Heading from "~/components/Heading.astro";
-import WideImage from "~/components/WideImage.astro";
-import ReviewSlider from "~/components/ReviewSlider.astro";
+import CategoryCard from "~/components/CategoryCard.astro";
 
-// Images
-import PizzaHero from "~/assets/images/images/3.jpg";
-import Pizza from "~/assets/images/images/gallery/7.jpg";
-import Spaghetti from "~/assets/images/images/gallery/1.jpeg";
-import Fish from "~/assets/images/images/gallery/8.jpg";
-import DecorativeImage from "~/assets/images/images/2.jpg";
-import reviewAuthors from "~/assets/images/images/review2.png";
-import Mussels from "~/assets/images/images/gallery/4.jpeg";
+const categories = [
+  {
+    id: "kytice",
+    title: "Kytice",
+    subtitle: "z čerstvých květin",
+    body: "Čerstvé, sezónní a pokaždé trochu jiné.",
+    image: "/flowers/b93a5688-e6e8-4fff-832f-a70aaa3d29a9.jpeg",
+    alt: "Bohatý a romantický květinový buket v rustikálním stylu s růžovými a bílými květy.",
+    href: "/gallery#kytice",
+  },
+  {
+    id: "vence-a-dekorace",
+    title: "Sušené květiny & věnce",
+    body: "Originální dekorace, které vydrží.",
+    image: "/flowers/70716e83-e783-46dc-b101-cf77095b8bf1.jpeg",
+    alt: "Sušený květinový věnec z hnědých a zlatých suchých rostlin.",
+    href: "/gallery#vence-a-dekorace",
+  },
+  {
+    id: "svatby",
+    title: "Svatební floristika",
+    body: "Kytice, korsáže, výzdoba obřadů i hostiny.",
+    image: "/flowers/b9f32fee-f3c2-4abb-9299-bed936e8a813.jpeg",
+    alt: "Paní v svatební šatě se dívá z okna, s květinami na okraji.",
+    href: "/gallery#svatby",
+  },
+  {
+    id: "zahrady",
+    title: "Zahrady a výsadby",
+    body: "Návrhy, osazování a péče o zahrady.",
+    image: "/flowers/86fd9a45-b676-4bda-8bac-1cf22319571e.jpeg",
+    alt: "Rustikální buket s modrými a zlatými květy v přírodním prostředí.",
+    href: "/gallery#zahrady",
+  },
+  {
+    id: null,
+    title: "Květinářství v Hrádku",
+    body: "Řezané květiny, pokojovky, trvalky a drobné dárky.",
+    image: "/flowers/d42669aa-56a3-47ca-8fd0-507a6c0a6a7c.jpeg",
+    alt: "Bohatá oranžová kytice slunečnic v skleněné váze.",
+    href: "/book",
+  },
+  {
+    id: null,
+    title: "Doplňky pro váš den",
+    body: "Korsáže, hřebínky a další detaily.",
+    image: "/flowers/16a8dc86-7d99-4e1a-a50b-01c17811688b.jpeg",
+    alt: "Jemný květinový korsáž z bílé růže a modrých květů na dřevě.",
+    href: "/gallery#doplnky",
+  },
+];
+
+const portfolio = [
+  {
+    image: "/flowers/4ca37b28-088d-4b7c-9272-384a611304e0.jpeg",
+    alt: "Rustikální květinový okras s bohatými růžovými a červenými květy.",
+  },
+  {
+    image: "/flowers/42fe18bc-ea5a-4fe9-9158-0392bd9775c2.jpeg",
+    alt: "Rustikální sušená květinová kytice v hnědé obálce s sušenými květy.",
+  },
+  {
+    image: "/flowers/55c3d768-209a-4763-a853-c2bc27177f94.jpeg",
+    alt: "Rustikální květinový dárek s bílými květy a zeleným listím.",
+  },
+  {
+    image: "/flowers/18ef0981-1389-43a7-b918-2546a229fa74.jpeg",
+    alt: "Rustikální sušený květinový věnec s muchornicemi a osušeným listím.",
+  },
+  {
+    image: "/flowers/7f8f3457-17db-4f52-bf2e-1e5493235670.jpeg",
+    alt: "Oranžové a modré korsáže na kamenné ploše pro svatební doplňky.",
+  },
+  {
+    image: "/flowers/74d78256-be34-4ad7-8b51-a3d8cc7f31ba.jpeg",
+    alt: "Rustikální věnec z purpurové a modré květiny a zeleně.",
+  },
+];
 ---
 
-<Layout title="Kytka z beskyd" pageTitle="Kytka z beskyd" description="Kytka z beskyd">
-	<Section class:list={"bg-white"}>
-		<Hero>
-			<div slot="hero-content-left" class="prose max-w-none max-lg:order-1">
-				<h1 class="font-black">Krása, která nikdy neuvadne.</h1>
+<Layout title="Kytka z Beskyd" pageTitle="Kytka z Beskyd" description="Kytka z Beskyd - květiny tvořené srdcem, inspirované přírodou.">
+	<!-- Hero -->
+	<Section id="hero" class:list="relative bg-cream overflow-hidden" contain={false}>
+		<img
+			src="/flowers/157b55da-b44f-4e52-ae33-42be1a7b0df9.jpeg"
+			alt="Velká, svěží kytice s růžovými a bílými květy v rustikálním balení."
+			width="1321"
+			height="1600"
+			class="hidden lg:block absolute inset-y-0 right-0 w-[65%] h-full object-cover object-[center_38%] [mask-image:linear-gradient(to_right,transparent_0%,rgba(0,0,0,0.35)_20%,black_45%)]"
+			loading="eager"
+			fetchpriority="high"
+		/>
+		<div class="hidden lg:block absolute inset-0 bg-gradient-to-r from-cream/70 from-30% via-cream/35 via-48% to-transparent to-64%" aria-hidden="true"></div>
 
-				<ul class="flex flex-col gap-y-2 my-4 text-sm md:text-base">
-					<li class="flex items-center gap-2 before:content-['•'] before:text-brand-red">Vázané věnce</li>
-					<li class="flex items-center gap-2 before:content-['•'] before:text-brand-red">Svatební kytice a dekorace</li>
-					<li class="flex items-center gap-2 before:content-['•'] before:text-brand-red">Smuteční věnce</li>
-					<li class="flex items-center gap-2 before:content-['•'] before:text-brand-red">Možnost dodání do druhého dne</li>
-					<li class="flex items-center gap-2 before:content-['•'] before:text-brand-red">Výroba na zakázku</li>
-				</ul>
+		<div class="container relative py-16 lg:py-32 lg:min-h-[min(80vh,720px)] lg:flex lg:items-center">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:items-center w-full">
+				<div>
+					<h1 class="font-display font-bold text-ink-green tracking-[0.08em] uppercase leading-none">
+						KYTKA<br />Z BESKYD
+					</h1>
 
-				<p>
-					Objevte jedinečné dekorace z přírodních materiálů, které přináší eleganci, vzpomínku i radost do každého prostoru.
-				</p>
+					<p class="mt-6 flex items-center gap-3 font-script text-ink-green text-3xl md:text-4xl">
+						Květiny tvořené srdcem, inspirované přírodou.
+						<svg xmlns="http://www.w3.org/2000/svg" class="size-6 shrink-0 text-accent-pink-soft" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path>
+						</svg>
+					</p>
 
+					<ul class="mt-6 flex flex-col gap-y-1 font-body uppercase tracking-[0.1em] text-sm text-ink-green">
+						<li class="flex flex-wrap items-center gap-x-2">
+							<span>Kytice</span><span aria-hidden="true">&middot;</span>
+							<span>Věnce</span><span aria-hidden="true">&middot;</span>
+							<span>Svatby</span>
+						</li>
+						<li class="flex flex-wrap items-center gap-x-2">
+							<span>Dekorace</span><span aria-hidden="true">&middot;</span>
+							<span>Zahrady</span>
+						</li>
+					</ul>
 
-				<div class="mt-8 flex items-center gap-x-8">
-					<ButtonCallUs />
+					<div class="mt-8 flex flex-wrap items-center gap-4">
+						<a
+							href="/book"
+							class="inline-flex items-center rounded-sm px-4 py-3 text-sm font-body font-semibold uppercase tracking-[0.1em] bg-accent-pink-deep text-white transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-pink-deep"
+						>
+							OBJEDNAT KYTICI
+						</a>
+						<a
+							href="#portfolio"
+							class="inline-flex items-center rounded-sm px-4 py-3 text-sm font-body font-semibold uppercase tracking-[0.1em] border border-ink-green text-ink-green transition hover:bg-ink-green hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink-green"
+						>
+							PROHLÉDNOUT TVORBU
+						</a>
+					</div>
+				</div>
+
+				<div class="lg:hidden">
+					<img
+						src="/flowers/157b55da-b44f-4e52-ae33-42be1a7b0df9.jpeg"
+						alt="Velká, svěží kytice s růžovými a bílými květy v rustikálním balení."
+						class="w-full h-full object-cover rounded-sm"
+						loading="eager"
+						fetchpriority="high"
+					/>
 				</div>
 			</div>
-			<div slot="hero-content-right">
-				<Picture
-					class:list={"mx-auto rounded-full aspect-square object-cover"}
-					src={PizzaHero}
-					width={600}
-					height={600}
-					formats={["avif", "webp"]}
-					alt="Hlavní obrázek"
-					loading={"eager"}
-					fetchpriority={"high"}
-				/>
-			</div>
-		</Hero>
+		</div>
 	</Section>
 
-	<WideImage image={DecorativeImage} alt="Just an image" class:list={"aspect-video lg:aspect-[16/6]"} />
-
-	<Section class:list={"bg-white"}>
-		<Heading>
-			<h2 slot="heading-title" class="font-black text-brand-green h2">Naše dekorace</h2>
-		</Heading>
-
-		<Grid>
-			{/* Grid Content 1 */}
-			<div slot="grid-content-1">
-				<div class="flex flex-col items-center prose text-center">
-					<Picture
-						class:list={"not-prose w-full h-auto"}
-						src={Pizza}
-						formats={["avif", "webp"]}
-						alt="Ručně vyráběné věnce"
-						style={{ borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70% " }}
-					/>
-					<h3 class="h4 mt-0 font-black">Ručně vyráběné věnce</h3>
-					<p>
-						Každý věnec je originál vytvořený s láskou a pečlivostí. Hodí se jako dekorace do interiéru i exteriéru a přináší kousek přírody přímo k vám domů.
-					</p>
-				</div>
-			</div>
-
-			{/* Grid Content 2 */}
-			<div slot="grid-content-2">
-				<div class="flex flex-col items-center prose text-center">
-					<Picture
-						class:list={"not-prose w-full h-auto"}
-						src={Spaghetti}
-						formats={["avif", "webp"]}
-						alt="Sušené květiny"
-						style={{ borderRadius: "42% 58% 60% 40% / 38% 70% 30% 62% " }}
-					/>
-					<h3 class="h4 mt-0 font-black">Sušené květiny</h3>
-					<p>
-						Trvanlivá krása, která nikdy neuvadne. Sušené květiny jsou ideální pro originální výzdobu i dárky, které potěší a vydrží roky.
-					</p>
-				</div>
-			</div>
-
-			{/* Grid Content 3 */}
-			<div slot="grid-content-3">
-				<div class="flex flex-col items-center prose text-center">
-					<Picture
-						class:list={"not-prose w-full h-auto"}
-						src={Fish}
-						formats={["avif", "webp"]}
-						alt="Zakázková výroba"
-						style={{ borderRadius: "60% 40% 63% 37% / 65% 62% 38% 35% " }}
-					/>
-					<h3 class="h4 mt-0 font-black">Zakázková výroba</h3>
-					<p>
-						Od svatebních kytic až po smuteční věnce. Vytvoříme pro vás dekoraci na míru podle vašich přání, se smyslem pro detail i kvalitu.
-					</p>
-				</div>
-			</div>
-		</Grid>
+	<!-- Category grid -->
+	<Section id="kategorie" class:list="bg-cream-alt">
+		<h2 class="sr-only">Kategorie</h2>
+		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-6 lg:gap-4">
+			{
+				categories.map((category, i) => (
+					<div id={category.id ?? undefined}>
+						<CategoryCard
+							title={category.title}
+							subtitle={category.subtitle}
+							body={category.body}
+							image={category.image}
+							alt={category.alt}
+							href={category.href}
+						>
+							{i === 0 && (
+								<svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-accent-pink-soft" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M12 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm0 0a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm0 0a3 3 0 1 0-6 0 3 3 0 0 0 6 0Zm0 0a3 3 0 1 0 6 0 3 3 0 0 0-6 0Z"></path>
+								</svg>
+							)}
+							{i === 1 && (
+								<svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-accent-pink-soft" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+									<circle cx="12" cy="12" r="7"></circle>
+									<path stroke-linecap="round" stroke-linejoin="round" d="M12 5v2m0 10v2m7-7h-2M7 12H5m10.6-4.6-1.4 1.4M8.8 15.8l-1.4 1.4m9.2 0-1.4-1.4M8.8 8.2 7.4 6.8"></path>
+								</svg>
+							)}
+							{i === 2 && (
+								<svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-accent-pink-soft" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+									<circle cx="8.5" cy="15" r="4.5"></circle>
+									<circle cx="15.5" cy="15" r="4.5"></circle>
+									<path stroke-linecap="round" stroke-linejoin="round" d="M12 10 9.5 5h5L12 10Z"></path>
+								</svg>
+							)}
+							{i === 3 && (
+								<svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-accent-pink-soft" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-9m0 0c0-3.314-2.686-6-6-6 0 3.314 2.686 6 6 6Zm0 0c0-3.314 2.686-6 6-6 0 3.314-2.686 6-6 6Z"></path>
+								</svg>
+							)}
+							{i === 4 && (
+								<svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-accent-pink-soft" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8M9 3h6l-.5 9.5a2.5 2.5 0 0 1-5 0L9 3Zm3 12.5V21"></path>
+								</svg>
+							)}
+							{i === 5 && (
+								<svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-accent-pink-soft" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M12 12c-2-3-6-3.5-8-2 .5 2.5 3 5 8 4Zm0 0c2-3 6-3.5 8-2-.5 2.5-3 5-8 4Zm0 0v7"></path>
+								</svg>
+							)}
+						</CategoryCard>
+					</div>
+				))
+			}
+		</div>
 	</Section>
 
-
-	<Section class:list={"bg-white"}>
+	<!-- About me -->
+	<Section id="o-mne" class:list="bg-cream">
 		<Hero>
-			<div slot="hero-content-left" class="prose max-w-none max-lg:order-1">
-				<h2 class="font-black h2 !my-4">Podzimní věnec</h2>
+			<div slot="hero-content-left" class="max-lg:order-1">
+				<h2 class="flex items-center gap-3 font-script font-normal! text-ink-green text-5xl lg:text-6xl">
+					O mně
+					<svg xmlns="http://www.w3.org/2000/svg" class="size-8 shrink-0 text-accent-pink-soft" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path>
+					</svg>
+				</h2>
 
-				<span class="text-brand-red text-2xl font-bold italic">Krása co zahřeje očima</span>
-
-				<p>
-					Nádherný podzimní věnec plný života a barev, který dokonale zachytí krásu tohoto kouzelného období. Tento jedinečný kousek je ručně tvořen z čerstvých i sušených květin v překrásných odstínech fialové a oranžové. Zdobený je nádhernými physalis lampionky, drobnými berami a jemnými travami, které vytváří bohatou texturu. 🍁✨
-				</p>
+				<div class="mt-6 flex flex-col gap-4 font-body text-ink-body leading-relaxed">
+					<p>Květiny jsou součástí mého života už od mládí.</p>
+					<p>Po letech práce v zahradnictví a vlastní zahradnické praxi jsem se naplno věnovala floristice.</p>
+					<p>Dnes pod značkou Kytka z Beskyd tvořím kytice, věnce a dekorace, při pravé svatební floristice a věnuji se také návrhům a výsadbám zahrad.</p>
+					<p>Mám ráda přirozený, trochu rozkvetlý styl a květiny, které vyprávějí, jako by přišly ze zahrady nebo beskydské louky.</p>
+					<p class="text-accent-pink-deep font-semibold">Každý kus vzniká ručně a žádné dvě kytice nejsou úplně stejné.</p>
+				</div>
 
 				<div class="mt-8">
-					<Button color="red" url="/book?message=Podzimní+věnec#email-form">Rezervujte si mě</Button>
+					<a
+						href="/about-us"
+						class="inline-flex items-center rounded-sm px-4 py-3 text-sm font-body font-semibold uppercase tracking-[0.1em] bg-ink-green text-white transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink-green"
+					>
+						VÍCE O MNĚ
+					</a>
 				</div>
 			</div>
 			<div slot="hero-content-right">
-				<Picture
-					class:list={"mx-auto"}
-					src={Mussels}
-					height={600}
-					formats={["avif", "webp"]}
-					alt="A description of my image."
-					style={{ borderRadius: "69% 31% 68% 32% / 60% 78% 22% 40% " }}
+				<img
+					src="/flowers/502ebd7d-ee28-4288-bf5d-bde666a90f60.jpeg"
+					alt="Rustikální aranžmá z sušených modrých květin a trávy."
+					class="w-full h-full object-cover rounded-sm"
+					loading="lazy"
 				/>
 			</div>
 		</Hero>
 	</Section>
 
-	<!-- Reviews -->
-	<Section class:list={"bg-brand-red/20 relative"}>
-		<div class="py-16">
-			<Hero>
-				<div slot="hero-content-left" class="prose max-w-none order-2">
-					<div class="text-center not-prose">
-						<Badge color="white" title="reviews" />
-					</div>
-					<h2 slot="heading-title" class="font-black h4 text-center mt-0 mb-4">Komentáře</h2>
-					<div slot="heading-content">
-						<p class="text-center">
-							Nevěřte jen nám, co říkáme, ale i co lidé říkají o nás.
-						</p>
+	<!-- Portfolio -->
+	<Section id="portfolio" class:list="bg-cream-alt">
+		<h2 class="flex items-center justify-center gap-3 font-script font-normal! text-ink-green text-5xl lg:text-6xl text-center">
+			Moje tvorba
+			<svg xmlns="http://www.w3.org/2000/svg" class="size-8 shrink-0 text-accent-pink-soft" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M12 21c-3-2-9-6.5-9-12A5 5 0 0 1 12 6a5 5 0 0 1 9 3c0 5.5-6 10-9 12Z"></path>
+				<path stroke-linecap="round" stroke-linejoin="round" d="M12 21V9"></path>
+			</svg>
+		</h2>
 
-						<ReviewSlider />
-					</div>
-				</div>
-
-				<div slot="hero-content-right">
-					<Picture src={reviewAuthors} alt="Review authors" class="w-full h-auto" />
-				</div>
-			</Hero>
+		<div class="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 lg:gap-4">
+			{
+				portfolio.map((item) => (
+					<img
+						src={item.image}
+						alt={item.alt}
+						class="w-full aspect-square object-cover rounded-sm"
+						loading="lazy"
+					/>
+				))
+			}
 		</div>
 
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 1440 320"
-			class="absolute h-40 w-full top-0 inset-x-0 rotate-180"
-			preserveAspectRatio="none"
-			><path
-				fill="#ffffff"
-				fill-opacity="1"
-				d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-			></path>
-		</svg>
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			viewBox="0 0 1440 320"
-			class="absolute h-40 w-full bottom-0 inset-x-0"
-			preserveAspectRatio="none"
-			><path
-				fill="#ffffff"
-				fill-opacity="1"
-				d="M0,288L48,272C96,256,192,224,288,197.3C384,171,480,149,576,165.3C672,181,768,235,864,250.7C960,267,1056,245,1152,250.7C1248,256,1344,288,1392,304L1440,320L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
-			></path>
-		</svg>
+		<div class="mt-10 flex justify-center">
+			<a
+				href="/gallery"
+				class="inline-flex items-center rounded-sm px-4 py-3 text-sm font-body font-semibold uppercase tracking-[0.1em] bg-accent-pink-deep text-white transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-pink-deep"
+			>
+				ZOBRAZIT DALŠÍ
+			</a>
+		</div>
 	</Section>
-
 </Layout>

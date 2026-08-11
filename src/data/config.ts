@@ -3,8 +3,8 @@ export const siteLang = "cs-CZ";
 export const siteCurrency = "CZK";
 export const siteDomain = "kytkazbeskyd.cz";
 export const siteName = "Kytka z beskyd";
-export const siteSlogan = "The best pies in the galaxy!";
-export const themeColor = "#FF0000";
+export const siteSlogan = "Květiny tvořené srdcem, inspirované přírodou.";
+export const themeColor = "#aa4a65";
 
 export const phone = {
   href: "tel:+420605157739",
@@ -16,17 +16,9 @@ export const email = {
   label: "ruszovanatalia@gmail.com",
 };
 
-export const address = {
-  street: "1234 Space Street",
-  city: "Galaxy City",
-  zip: "12345",
-  state: "Milky Way",
-  country: "Space",
-};
-
 export const socialMedia = {
   facebook: {
-    url: "https://facebook.com",
+    url: "https://www.facebook.com/kytkazbeskyd",
     label: "Facebook",
     icon: "facebook",
   },
@@ -36,7 +28,7 @@ export const socialMedia = {
     icon: "twitter",
   },
   instagram: {
-    url: "https://instagram.com",
+    url: "https://www.instagram.com/kytkazbeskyd",
     label: "Instagram",
     icon: "instagram",
   },

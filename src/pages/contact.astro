@@ -1,18 +1,18 @@
 ---
 import Layout from "~/layouts/Layout.astro";
 import Section from "~/components/Section.astro";
-import Heading from "~/components/Heading.astro";
 import FormContact from "~/components/forms/FormContact.astro";
 ---
 
-<Layout>
-	<Section>
-		<Heading>
-			<h2 slot="heading-title" class="font-black text-brand-green h2">Contact</h2>
-			<p slot="heading-content">Get in touch with us for any questions or inquiries.</p>
-		</Heading>
+<Layout title="Kontakt" pageTitle="Kontakt" description="Kontaktujte Kytka z Beskyd s jakýmkoliv dotazem nebo poptávkou.">
+	<Section id="kontakt" class:list="bg-cream">
+		<div class="mx-auto max-w-2xl text-center mb-12">
+			<h1 class="font-display font-bold text-ink-green">Kontakt</h1>
+			<p class="mt-4 font-body text-ink-body leading-relaxed">
+				Ozvěte se mi s jakýmkoliv dotazem nebo poptávkou, ráda s vámi vše proberu a poradím.
+			</p>
+		</div>
 
-        <FormContact />
-		
+		<FormContact />
 	</Section>
 </Layout>

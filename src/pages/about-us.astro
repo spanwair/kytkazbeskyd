@@ -2,91 +2,117 @@
 import Layout from "~/layouts/Layout.astro";
 import Section from "~/components/Section.astro";
 import Hero from "~/components/Hero.astro";
-import { Picture } from "astro:assets";
-import Badge from "~/components/Badge.astro";
-import Button from "~/components/Button.astro";
-import ButtonCallUs from "~/components/ButtonCallUs.astro";
-import Article from "~/components/Article.astro";
-
-// Images
-import PizzaHero from "~/assets/images/images/about.jpg";
 ---
 
-<Layout>
-	<Section class:list={"bg-white"}>
+<Layout title="O mně | Kytka z Beskyd" pageTitle="O mně" description="Natália Ruszová, floristka a zahradnice z Hrádku v Beskydech - příběh, filozofie a tvorba za značkou Kytka z Beskyd.">
+	<!-- Intro -->
+	<Section id="o-mne" class:list="bg-cream">
 		<Hero>
-			<div slot="hero-content-left" class="prose max-w-none max-lg:order-1">
-				<h1 class="font-black">Natália Ruszová</h1>
+			<div slot="hero-content-left" class="max-lg:order-1">
+				<h1 class="font-display font-bold text-ink-green text-5xl lg:text-6xl">Natália Ruszová</h1>
 
-				<p>
-					Jsem z Hrádku - malebnè vesničky v Beskydech. Miluji květiny jak v živé tak i v sušené podobě. Tvorba květinových aranžma, věnců a kytic je 
-pro mně nejen koníčkem, ale i vášni.
-
+				<p class="mt-4 flex items-center gap-3 font-script text-ink-green text-3xl md:text-4xl">
+					Kytka z Beskyd
+					<svg xmlns="http://www.w3.org/2000/svg" class="size-6 shrink-0 text-accent-pink-soft" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"></path>
+					</svg>
 				</p>
+
+				<div class="mt-6 flex flex-col gap-4 font-body text-ink-body leading-relaxed">
+					<p>
+						Jsem z Hrádku - malebné vesničky v Beskydech. Miluji květiny jak v živé, tak i v sušené podobě.
+						Tvorba květinových aranžmá, věnců a kytic je pro mě nejen koníčkem, ale i vášní.
+					</p>
+				</div>
 			</div>
 			<div slot="hero-content-right">
-				<Picture
-					class:list={"mx-auto"}
-					src={PizzaHero}
-					height={600}
-					formats={["avif", "webp"]}
-					alt="A description of my image."
-					loading={"eager"}
-					fetchpriority={"high"}
-					style={{ borderRadius: "30% 70% 70% 30% / 30% 30% 70% 70% " }}
+				<img
+					src="/flowers/502ebd7d-ee28-4288-bf5d-bde666a90f60.jpeg"
+					alt="Ruce zaujaté vazbou aranžmá ze sušených modrých květin a trávy."
+					class="w-full h-full object-cover rounded-sm"
+					loading="eager"
+					fetchpriority="high"
 				/>
 			</div>
 		</Hero>
 	</Section>
 
-	<Section class:list={'bg-white'}>
-		<Article>
-			<p>
-				<strong>Objevte krásu ručně vyráběných věnců a sušených květin.</strong><br/><br/>
-				Každý kousek je tvořen s láskou a pečlivostí z těch nejlepších přírodních materiálů. 
-				Najdete u nás podzimní i celoroční věnce, elegantní dekorace i svatební kytice. 
-				Ať už hledáte originální dárek nebo jedinečnou výzdobu, vždy u nás najdete něco, co potěší.
-			</p>
+	<!-- Story, philosophy & what makes it special -->
+	<Section id="pribeh" class:list="bg-cream-alt">
+		<div class="mx-auto max-w-3xl flex flex-col gap-12">
+			<div class="font-body text-ink-body leading-relaxed flex flex-col gap-4">
+				<p>
+					<strong class="text-ink-green">Objevte krásu ručně vyráběných věnců a sušených květin.</strong><br />
+					Každý kousek je tvořen s láskou a pečlivostí z těch nejlepších přírodních materiálů.
+					Najdete u nás podzimní i celoroční věnce, elegantní dekorace i svatební kytice.
+					Ať už hledáte originální dárek nebo jedinečnou výzdobu, vždy u nás najdete něco, co potěší.
+				</p>
 
-			<ul>
-				<li>Možnost dodání do druhého dne (normálně 7-14 dní)</li>
-				<li>Výroba na zakázku</li>
-				<li>Zavolejte nám: 605 157 739</li>
-			</ul>
+				<ul class="flex flex-col gap-1 list-disc pl-5">
+					<li>Možnost dodání do druhého dne (normálně 7-14 dní)</li>
+					<li>Výroba na zakázku</li>
+					<li>Zavolejte nám: 605 157 739</li>
+				</ul>
 
-			<p>
-				Tvorba věnců a sušených květin je pro mě nejen práce, ale i vášeň. 
-				Od prvé chvíle, kdy vezmu do ruky přírodní materiál, až po finální detail, 
-				vzniká jedinečné dílo, které vnese do vašeho domova eleganci, radost a harmonii.
-			</p>
+				<p>
+					Tvorba věnců a sušených květin je pro mě nejen práce, ale i vášeň.
+					Od první chvíle, kdy vezmu do ruky přírodní materiál, až po finální detail,
+					vzniká jedinečné dílo, které vnese do vašeho domova eleganci, radost a harmonii.
+				</p>
+			</div>
 
-			<h3>Náš příběh</h3>
-			<p>
-				Založila jsem svou tvorbu z touhy přinést lidem kousek přírody do jejich životů. 
-				Každý věnec a každá kytice vychází z tradic i moderního designu – 
-				a v každém kousku se odráží příběh, emoce a osobní přístup.
-			</p>
+			<div>
+				<h2 class="font-display font-bold text-ink-green text-3xl lg:text-4xl">Náš příběh</h2>
+				<p class="mt-4 font-body text-ink-body leading-relaxed">
+					Založila jsem svou tvorbu z touhy přinést lidem kousek přírody do jejich životů.
+					Každý věnec a každá kytice vychází z tradic i moderního designu - a v každém kousku
+					se odráží příběh, emoce a osobní přístup.
+				</p>
+			</div>
 
-			<h3>Naše filozofie</h3>
-			<blockquote>„Tajemstvím krásné dekorace je vždy láska.“</blockquote>
-			<p>
-				Věřím v jednoduchost přírodních materiálů, poctivou ruční práci a radost, 
-				ktoru dekorace přináší. Každý věnec či kytice je tvořen s péčí, aby dlouho těšil a zdobil.
-			</p>
+			<div>
+				<h2 class="font-display font-bold text-ink-green text-3xl lg:text-4xl">Naše filozofie</h2>
+				<blockquote class="mt-4 font-script text-accent-pink-deep text-3xl border-l-2 border-accent-pink-soft pl-4">
+					„Tajemstvím krásné dekorace je vždy láska.“
+				</blockquote>
+				<p class="mt-4 font-body text-ink-body leading-relaxed">
+					Věřím v jednoduchost přírodních materiálů, poctivou ruční práci a radost,
+					kterou dekorace přináší. Každý věnec či kytice je tvořen s péčí, aby dlouho těšil a zdobil.
+				</p>
+			</div>
 
-			<h4>Co nás dělá výjimečnými?</h4>
-			<ul>
-				<li><strong>Autenticita:</strong> Každý kus je originál, vyráběný ručně.</li>
-				<li><strong>Přírodní materiály:</strong> Používám sušené květiny a sezónní dekorace.</li>
-				<li><strong>Osobní přístup:</strong> Dekorace na míru podle vašich představ.</li>
-			</ul>
+			<div>
+				<h3 class="font-display font-bold text-ink-green text-2xl lg:text-3xl">Co nás dělá výjimečnými?</h3>
+				<ul class="mt-4 flex flex-col gap-2 font-body text-ink-body leading-relaxed">
+					<li><strong class="text-ink-green">Autenticita:</strong> Každý kus je originál, vyráběný ručně.</li>
+					<li><strong class="text-ink-green">Přírodní materiály:</strong> Používám sušené květiny a sezónní dekorace.</li>
+					<li><strong class="text-ink-green">Osobní přístup:</strong> Dekorace na míru podle vašich představ.</li>
+				</ul>
+			</div>
 
-			<h3>Krása vždy potěší</h3>
-			<p>
-				Ať už hledáte výzdobu pro svatbu, smuteční věnec nebo dekoraci pro zútulnění domova, 
-				u mě vždy najdete jedinečný kousek s osobním dotekem. 
-				Přijďte si vybrat, nebo si nechte vytvořit dekoraci na míru.
-			</p>
-		</Article>
+			<div>
+				<h2 class="font-display font-bold text-ink-green text-3xl lg:text-4xl">Krása vždy potěší</h2>
+				<p class="mt-4 font-body text-ink-body leading-relaxed">
+					Ať už hledáte výzdobu pro svatbu, smuteční věnec nebo dekoraci pro zútulnění domova,
+					u mě vždy najdete jedinečný kousek s osobním dotekem.
+					Přijďte si vybrat, nebo si nechte vytvořit dekoraci na míru.
+				</p>
+			</div>
+
+			<div class="flex flex-wrap items-center gap-4">
+				<a
+					href="/book"
+					class="inline-flex items-center rounded-sm px-4 py-3 text-sm font-body font-semibold uppercase tracking-[0.1em] bg-accent-pink-deep text-white transition hover:opacity-90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent-pink-deep"
+				>
+					OBJEDNAT KYTICI
+				</a>
+				<a
+					href="/contact"
+					class="inline-flex items-center rounded-sm px-4 py-3 text-sm font-body font-semibold uppercase tracking-[0.1em] border border-ink-green text-ink-green transition hover:bg-ink-green hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink-green"
+				>
+					KONTAKTUJTE MĚ
+				</a>
+			</div>
+		</div>
 	</Section>
 </Layout>
