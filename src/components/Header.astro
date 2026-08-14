@@ -14,8 +14,8 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
 <header class="bg-cream" x-data="{ open: false }" @keydown.window.escape="open = false">
   <div class="container py-4 md:py-6">
     <nav class="flex items-center justify-between gap-4" aria-label="Global">
-      <a href="/" class="shrink-0 inline-flex items-center justify-center rounded-full border border-ink-green size-16 md:size-20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink-green" aria-label="Kytka z Beskyd - domů">
-        <span class="font-script text-ink-green text-base md:text-lg leading-none text-center px-1">Kytka z Beskyd</span>
+      <a href="/" class="shrink-0 inline-flex items-center justify-center rounded-full border border-ink-green size-16 md:size-20 overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink-green" aria-label="Kytka z Beskyd - domů">
+        <img src="/logo-mark.png" alt="Kytka z Beskyd" width="80" height="80" class="h-full w-full object-cover" />
       </a>
 
       <div class="flex lg:hidden">
@@ -97,8 +97,8 @@ const pathname = rmTrailingSlash(Astro.url.pathname);
         x-cloak
       >
         <div class="flex items-center justify-between">
-          <a href="/" class="inline-flex items-center justify-center rounded-full border border-ink-green size-16 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink-green" aria-label="Kytka z Beskyd - domů" @click="open = false">
-            <span class="font-script text-ink-green text-base leading-none text-center px-1">Kytka z Beskyd</span>
+          <a href="/" class="inline-flex items-center justify-center rounded-full border border-ink-green size-16 overflow-hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink-green" aria-label="Kytka z Beskyd - domů" @click="open = false">
+            <img src="/logo-mark.png" alt="Kytka z Beskyd" width="64" height="64" class="h-full w-full object-cover" />
           </a>
           <button type="button" class="-m-2.5 p-2.5 text-ink-green focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink-green" @click="open = false">
             <span class="sr-only">Zavřít menu</span>
